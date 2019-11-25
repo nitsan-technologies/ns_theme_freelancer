@@ -1,0 +1,39 @@
+{
+  "name": "nitsan/ns-theme-freelancer",
+  "type": "typo3-cms-extension",
+  "description": "Every freelancer dream just came true, as we have made T3T freelancer! This beautiful TYPO3 theme is an excellent choice for any freelance agency and freelancer, as it enables them to showcase their work in a gorgeous manner. Demo: https://demo.t3terminal.com/t3t-freelancer/ PRO version: https://t3terminal.com/t3-freelancer-free/",
+  "keywords": [
+    "TYPO3 CMS",
+    "bootstrap",
+    "responsive",
+    "frontend",
+    "theme",
+    "freelancer",
+    "professional"
+  ],
+  "homepage": "https://www.nitsan.in/",
+  "authors": [
+    {
+        "name": "NITSAN Technologies Pvt Ltd",
+        "email": "info@nitsan.in",
+        "role": "Developer",
+        "homepage": "http://www.nitsan.in/"
+    }
+  ],
+  "support": {
+    "issues": "https://www.nitsan.in/"
+  },
+  "license": "MIT",
+  "require": {
+    "typo3/cms-core": ">=8.0.0",
+    "nitsan/ns-basetheme": ">=1.0.0"
+  },
+  "replace": {
+      "nitsan/ns-theme-freelancer": "self.version"
+  },
+  "extra": {
+      "typo3/cms": {
+          "extension-key": "ns_theme_freelancer"
+      }
+  }
+}
