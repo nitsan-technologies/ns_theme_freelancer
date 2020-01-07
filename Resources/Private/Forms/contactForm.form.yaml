@@ -1,0 +1,71 @@
+
+renderingOptions:
+  submitButtonLabel: Send
+type: Form
+identifier: contactForm
+label: 'Contact Form'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Theme-  Freelancer'
+      recipientAddress: '{email-1}'
+      recipientName: '{text-1}'
+      senderAddress: '{email-1}'
+      senderName: '{text-1}'
+      replyToAddress: '{email-1}'
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+    identifier: EmailToSender
+  -
+    options:
+      message: "Thank You for contact us, We will back to you asap.\n"
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+      -
+        defaultValue: ''
+        type: Email
+        identifier: email-1
+        label: 'Email address'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email Address'
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: 'Phone Number'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Phone Number'
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Message
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            placeholder: Message

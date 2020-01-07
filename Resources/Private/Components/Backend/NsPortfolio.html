@@ -1,0 +1,14 @@
+<div class="row">
+<div class="col-md-6 col-lg-4">
+  <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+      <f:if condition="{flexformData.title}">
+	   <h2>{flexformData.title}</h2>
+	</f:if> 
+    </div>
+	<f:if condition="{flexformData.image}">
+	   <f:image src="{flexformData.image}" class="img-fluid5" alt="portfolio-img" />
+	</f:if> 
+  </div>
+</div>
+</div>

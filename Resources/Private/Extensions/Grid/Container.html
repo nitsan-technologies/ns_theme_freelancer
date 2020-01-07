@@ -1,0 +1,34 @@
+<f:if condition="{backgroundimage}">
+    <f:then>
+        <f:variable name="bgImage" value="{f:uri.image(image: '{backgroundimage.0}')}" />
+    </f:then>
+    <f:else>
+        <f:variable name="bgImage" value="" />
+    </f:else>
+</f:if>
+<div class="section mcb-section {data.flexform_columnType} frame-space-before-{data.space_before_class} frame-space-after-{data.space_after_class}" style="padding-top: {data.flexform_paddingTop}px;padding-bottom: {data.flexform_paddingBottom}px;background-image:url({bgImage}); background-repeat:no-repeat; background-position:center top;">
+    <div class="section_wrapper mcb-section-inner">
+        <f:if condition="{data.header}">
+            <div class="wrap mcb-wrap one valign-top clearfix">
+                <div class="mcb-wrap-inner">
+                    <div class="column mcb-column one column_column">
+                        <div class="column_attr clearfix">
+                            <f:if condition="{data.layout}">
+                                <f:then>
+                                    <h{data.layout}>{data.header->f:format.raw()}</h{data.layout}>
+                                </f:then>
+                                <f:else>
+                                    <h2>{data.header->f:format.raw()}</h2>
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </div>
+                    <div class="column mcb-column one column_divider">
+                        <hr class="no_line" style="margin: 0 auto 30px;">
+                    </div>
+                </div>
+            </div>
+        </f:if>
+        <f:format.raw>{data.tx_gridelements_view_column_1}</f:format.raw>
+    </div>
+</div>
