@@ -3,7 +3,7 @@
 // Provide detailed information and depenencies of EXT:ns_theme_freelancer
 $EM_CONF[$_EXTKEY] = array(
 	'title' => '[NITSAN] Freelancer TYPO3 Template',
-	'description' => 'The child theme of EXT:ns_basetheme',
+	'description' => 'Every freelancer dream just came true, as we have ve made T3 Freelancer Free TYPO3 Portfolio Template! LIVE Demo: https://demo.t3terminal.com/?theme=t3t-freelancer You can download PRO version with more-features & free-support at https://t3terminal.com/t3-freelancer-free-typo3-portfolio-template',
 	'category' => 'templates',
 	'author' => 'T3:Sonal Chauhan, QA:Vandna Kalivada',
 	'author_email' => 'info@nitsan.in',
