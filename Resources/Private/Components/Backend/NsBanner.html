@@ -1,0 +1,18 @@
+ <header class="masthead text-white text-center" style="background-color: #1abc9c">
+    <div class="container d-flex align-items-center flex-column">
+	<f:if condition="{image}">
+		<f:for each="{image}" as="file">
+           <f:image image="{file}" class="masthead-avatar mb-5" alt="banner-img" width="200c" height="200c" />
+       </f:for>
+    </f:if> 
+	
+	<f:if condition="{flexformData.headline}">
+      		<h1 class="masthead-heading text-uppercase mb-0">{flexformData.headline}</h1>
+	</f:if>
+
+	
+	<f:if condition="{flexformData.text}">
+      		<p class="masthead-subheading font-weight-light mb-0">{flexformData.text}</p>
+	</f:if>
+    </div>
+  </header>

@@ -1,0 +1,37 @@
+{
+  "name": "nitsan/ns-theme-freelancer",
+  "type": "typo3-cms-extension",
+  "description": "Every freelancer dream just came true, as we have ve made T3 Freelancer Free TYPO3 Portfolio Template! LIVE Demo: https://demo.t3terminal.com/?theme=t3t-freelancer You can download PRO version with more-features & free-support at https://t3terminal.com/t3-freelancer-free-typo3-portfolio-template",
+  "keywords": [
+    "TYPO3 CMS",
+    "bootstrap",
+    "responsive",
+    "frontend",
+    "theme"
+  ],
+  "homepage": "https://www.nitsan.in/",
+  "authors": [
+    {
+        "name": "NITSAN Technologies Pvt Ltd",
+        "email": "info@nitsan.in",
+        "role": "Developer",
+        "homepage": "http://www.nitsan.in/"
+    }
+  ],
+  "support": {
+    "issues": "https://www.nitsan.in/"
+  },
+  "license": "MIT",
+  "require": {
+    "typo3/cms-core": ">=8.0.0",
+    "nitsan/ns-basetheme": ">=1.0.0"
+  },
+  "replace": {
+      "nitsan/ns-theme-freelancer": "self.version"
+  },
+  "extra": {
+      "typo3/cms": {
+          "extension-key": "ns_theme_freelancer"
+      }
+  }
+}

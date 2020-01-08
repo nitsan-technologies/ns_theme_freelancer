@@ -1,0 +1,17 @@
+<footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+		    <f:cObject typoscriptObjectPath="lib.footerContent"/>
+  	 </div>
+    </div>
+</footer>
+<section class="copyright py-4 text-center text-white">
+    <div class="container">
+	     <small><f:cObject typoscriptObjectPath="lib.copyright"/> <f:if condition="{settings.childSettings.linktext}"><a target="_blank" rel="nofollow" href="{f:uri.typolink(parameter:'{settings.childSettings.link}')}">{settings.childSettings.linktext}</a></f:if></small>
+    </div>
+ </section>
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>

@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+	<div class="control-group">
+        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+			<f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent">
+				<f:form.textfield
+						type="email"
+						property="{element.identifier}"
+						id="{element.uniqueIdentifier}"
+						class="{element.properties.elementClassAttribute} form-control"
+						errorClass="{element.properties.elementErrorClassAttribute}"
+						additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+				/>
+				<p class="help-block text-danger"></p>
+			</f:render>
+		</div>
+	</div>		
+</formvh:renderRenderable>
+</html>

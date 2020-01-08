@@ -1,0 +1,46 @@
+<f:switch expression="{data.flexform_columnType}">
+    <f:case value="1">
+        <div class="section mcb-section mcb-section-h0eb72ehi" style="padding-top:70px; padding-bottom:70px; background-color:">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one-third valign-top clearfix" style="padding:0 5%0 0">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix">
+                                <f:format.raw>{data.tx_gridelements_view_column_1}</f:format.raw>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap two-third valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <f:format.raw>{data.tx_gridelements_view_column_2}</f:format.raw>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </f:case>
+    <f:case value="3">
+        <div class="column mcb-column one-third column_column">
+            <div class="column_attr clearfix">
+                <f:format.raw>{data.tx_gridelements_view_column_1}</f:format.raw>
+            </div>
+        </div>
+        <div class="column mcb-column two-third column_column">
+            <div class="column_attr clearfix">
+                <f:format.raw>{data.tx_gridelements_view_column_2}</f:format.raw>
+            </div>
+        </div>
+    </f:case>
+    <f:defaultCase>
+        <div class="wrap mcb-wrap one-second valign-middle clearfix">
+            <div class="mcb-wrap-inner">
+                <f:format.raw>{data.tx_gridelements_view_column_1}</f:format.raw>
+            </div>
+        </div>
+        <div class="wrap mcb-wrap one-second valign-middle clearfix">
+            <div class="mcb-wrap-inner">
+                <f:format.raw>{data.tx_gridelements_view_column_2}</f:format.raw>
+            </div>
+        </div>
+    </f:defaultCase>
+</f:switch>
