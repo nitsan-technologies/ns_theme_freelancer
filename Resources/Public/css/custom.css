@@ -13,18 +13,8 @@ body{
     color: #1abc9c;	
     line-height: normal;    
 }
-.error.help-block{
-	color: red;
-	font-weight: 600;
-}
-
 @media screen and (max-width: 767px){
 	.confirm-msg h1{
 		font-size:30px;
 	}
-}
-@media screen and (max-width: 575px){
-	.navbar-expand-lg>.container{
-		justify-content: center;
-	}	
 }

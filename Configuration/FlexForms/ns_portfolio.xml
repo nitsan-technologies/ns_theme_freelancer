@@ -15,7 +15,7 @@
                             </config>
                         </TCEforms>
                     </title>
-		    <image>
+		            <image>
                         <TCEforms>
                             <label>
                                 LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.image
@@ -44,7 +44,7 @@
                             </config>
                         </TCEforms>
                     </description> 
-		</el>                           
+		          </el>                           
             </ROOT>
         </sDEF>
     </sheets>

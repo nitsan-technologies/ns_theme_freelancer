@@ -24,7 +24,7 @@
                             </config>
                         </TCEforms>
                     </lefttxt> 
- 		   <righttxt>
+ 		             <righttxt>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.righttxt</label>
                             <config>
@@ -33,7 +33,7 @@
                             </config>
                         </TCEforms>
                     </righttxt> 
-		    <btntxt>
+		            <btntxt>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btntxt</label>
                             <config>
@@ -41,7 +41,7 @@
                             </config>
                         </TCEforms>
                     </btntxt> 
-		    <btnlink>
+		            <btnlink>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btnlink</label>
                             <config>
@@ -61,7 +61,7 @@
                             </config>
                         </TCEforms>
                     </btnlink> 
-		</el>                           
+		        </el>                           
             </ROOT>
         </sDEF>
     </sheets>

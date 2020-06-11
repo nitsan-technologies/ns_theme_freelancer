@@ -1,13 +1,13 @@
-<footer class="footer text-center">
+ <footer class="footer text-center">
     <div class="container">
       <div class="row">
-		    <f:cObject typoscriptObjectPath="lib.footerContent"/>
-  	 </div>
+		<f:cObject typoscriptObjectPath="lib.footerContent"/>
+  	</div>
     </div>
-</footer>
+ </footer>
 <section class="copyright py-4 text-center text-white">
     <div class="container">
-	     <small><f:cObject typoscriptObjectPath="lib.copyright"/> <f:if condition="{settings.childSettings.linktext}"><a target="_blank" rel="nofollow" href="{f:uri.typolink(parameter:'{settings.childSettings.link}')}">{settings.childSettings.linktext}</a></f:if></small>
+	<small><f:cObject typoscriptObjectPath="lib.copyright"/></small>
     </div>
  </section>
   <div class="scroll-to-top d-lg-none position-fixed ">

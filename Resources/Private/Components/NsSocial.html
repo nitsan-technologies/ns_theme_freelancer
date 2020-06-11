@@ -2,24 +2,23 @@
 <f:if condition="{content.title}">
       <h4 class="text-uppercase mb-4">{content.title}</h4>
 </f:if>
-
 <f:if condition="{content.fblink}">
-  <a class="btn btn-outline-light btn-social mx-1" href="{content.fblink}">
+  <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{content.fblink}" >
     <i class="fab fa-fw fa-facebook-f"></i>
-  </a>
+  </f:link.typolink>  
 </f:if>
 <f:if condition="{content.twlink}">
-  <a class="btn btn-outline-light btn-social mx-1" href="{content.twlink}">
+  <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{content.twlink}" >
     <i class="fab fa-fw fa-twitter"></i>
-  </a>
+  </f:link.typolink>   
 </f:if>
 <f:if condition="{content.inlink}">
-  <a class="btn btn-outline-light btn-social mx-1" href="{content.inlink}">
+  <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{content.inlink}" >
     <i class="fab fa-fw fa-linkedin-in"></i>
-  </a>
+  </f:link.typolink>  
 </f:if>
 <f:if condition="{content.drilink}">
-  <a class="btn btn-outline-light btn-social mx-1" href="{content.drilink}">
-    <i class="fab fa-fw fa-dribbble"></i>
-  </a>
+  <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{content.drilink}" >
+     <i class="fab fa-fw fa-dribbble"></i>
+  </f:link.typolink>
 </f:if>

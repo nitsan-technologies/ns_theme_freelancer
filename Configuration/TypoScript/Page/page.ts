@@ -1,9 +1,8 @@
 # Grab all the constant
 plugin {
-    ns_theme_freelancer {
+    ns_theme_callcenter {
         settings {
-            linktext = {$ns_theme_freelancer.website.hfooter.linktext}
-            link = {$ns_theme_freelancer.website.hfooter.link}
+            // Your constant
 
         }
     }
@@ -22,13 +21,20 @@ page {
 
 	headerData{
 		10 = TEXT
-		10.value(
-			 <meta charset="utf-8">
-			 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-			 <meta name="description" content="">
-			 <meta name="author" content="">			
-  			<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  			<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+		10.value(			
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">         
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+            <script>
+             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+             ga('create', '{$ns_theme_freelancer.website.settings.googleanalytics}', 'auto');
+             ga('send', 'pageview');
+           </script>
 		)
 	}
 
@@ -38,17 +44,18 @@ page {
         
         80 = typo3conf/ext/ns_theme_freelancer/Resources/Public/css/freelancer.min.css
         90 = typo3conf/ext/ns_theme_freelancer/Resources/Public/css/custom.css
-        100 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/fontawesome-free/css/all.min.css
+	    100 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/fontawesome-free/css/all.min.css
     }
 
     // Initiate all the js-together
     includeJSFooter {
         //50 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/clean-blog.min.js
 	20 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/jquery/jquery.min.js
-    30 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js
-    40 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/jquery-easing/jquery.easing.min.js
-    50 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/jqBootstrapValidation.js
-    70 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/freelancer.min.js
+	30 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js
+	40 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/jquery-easing/jquery.easing.min.js
+	50 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/jqBootstrapValidation.js
+	60 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/contact_me.js
+	70 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/freelancer.min.js
     }
     
     10 = FLUIDTEMPLATE
@@ -82,7 +89,7 @@ lib {
 mainContent.select.where = colPos = 0
 
     footerContent < lib.content
-	footerContent.select.pidInList = {$ns_basetheme.website.settings.footer_menu}
+	footerContent.select.pidInList = 9
     footerContent.select.where = colPos = 0
     footerContent.slide = -1
 }
