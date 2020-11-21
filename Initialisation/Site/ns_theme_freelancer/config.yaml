@@ -1,0 +1,31 @@
+rootPageId: 1
+base: '/'
+baseVariants: {  }
+languages:
+  -
+    title: English
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: default
+    locale: en_US.UTF-8
+    iso-639-1: en
+    navigationTitle: English
+    hreflang: en-US
+    direction: ''
+    flag: en-us-gb
+errorHandling:
+  -
+    errorCode: '404'
+    errorHandler: Page
+    errorContentSource: '5'
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "User-agent: *\r\nDisallow: /typo3/\r\nDisallow: /typo3_src/\r\nAllow: /typo3/sysext/frontend/Resources/Public/*\r\n"
+  -
+    route: sitemap.xml
+    type: uri
+    source: 'http://www.site.com/?sitemap=pages&type=1533906435'
+disableStaticFileCache: false
