@@ -42,20 +42,20 @@ page {
     includeCSS {
         //20 = 
         
-        80 = typo3conf/ext/ns_theme_freelancer/Resources/Public/css/freelancer.min.css
-        90 = typo3conf/ext/ns_theme_freelancer/Resources/Public/css/custom.css
-	    100 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/fontawesome-free/css/all.min.css
+        80 = EXT:ns_theme_freelancer/Resources/Public/css/freelancer.min.css
+        90 = EXT:ns_theme_freelancer/Resources/Public/css/custom.css
+	    100 = EXT:ns_theme_freelancer/Resources/Public/vendor/fontawesome-free/css/all.min.css
     }
 
     // Initiate all the js-together
     includeJSFooter {
         //50 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/clean-blog.min.js
-	20 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/jquery/jquery.min.js
-	30 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js
-	40 = typo3conf/ext/ns_theme_freelancer/Resources/Public/vendor/jquery-easing/jquery.easing.min.js
-	50 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/jqBootstrapValidation.js
-	60 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/contact_me.js
-	70 = typo3conf/ext/ns_theme_freelancer/Resources/Public/js/freelancer.min.js
+	20 = EXT:ns_theme_freelancer/Resources/Public/vendor/jquery/jquery.min.js
+	30 = EXT:ns_theme_freelancer/Resources/Public/vendor/bootstrap/js/bootstrap.bundle.min.js
+	40 = EXT:ns_theme_freelancer/Resources/Public/vendor/jquery-easing/jquery.easing.min.js
+	50 = EXT:ns_theme_freelancer/Resources/Public/js/jqBootstrapValidation.js
+	60 = EXT:ns_theme_freelancer/Resources/Public/js/contact_me.js
+	70 = EXT:ns_theme_freelancer/Resources/Public/js/freelancer.min.js
     }
     
     10 = FLUIDTEMPLATE
