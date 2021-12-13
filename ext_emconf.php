@@ -11,8 +11,8 @@ $EM_CONF['ns_theme_freelancer'] = [
     'version' => '2.1.3',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.0.0-10.9.99',
-            'ns_basetheme' => '1.0.0-11.9.99',
+            'typo3' => '9.0.0-10.9.99',
+            'ns_basetheme' => '9.0.0-11.9.99',
             'gridelements' => '9.0.0-10.9.99',
         ],
         'conflicts' => [
