@@ -1,44 +1,40 @@
-  <section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-      <!-- About Section Heading -->
-<f:if condition="{content.title}">
-      <h2 class="page-section-heading text-center text-uppercase text-white">{content.title}</h2>
-</f:if>
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
+  <div id="about" class="section mcb-section {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <f:if condition="{content.title}">
+          <h2 class="page-section-heading text-center text-uppercase text-white">{content.title}</h2>
+        </f:if>
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- About Section Content -->
-      <div class="row">
-        <div class="col-lg-4 ml-auto">        
-	<f:if condition="{content.lefttxt}">
-	  <p class="lead">{content.lefttxt}</p>
-	</f:if>	
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <f:if condition="{content.lefttxt}">
+              <p class="lead">{content.lefttxt}</p>
+            </f:if>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <f:if condition="{content.righttxt}">
+              <p class="lead">{content.righttxt}</p>
+            </f:if>
+          </div>
         </div>
-        <div class="col-lg-4 mr-auto">
-          <f:if condition="{content.righttxt}">
-	  <p class="lead">{content.righttxt}</p>
-	</f:if>	
+        <div class="text-center mt-4">
+          <f:if condition="{content.btntxt} && {content.btnlink}">
+            <f:link.typolink class="btn btn-xl btn-outline-light" parameter="{content.btnlink}">
+              <i class="fas fa-download mr-2"></i>
+              {content.btntxt}
+            </f:link.typolink>
+          </f:if>
         </div>
       </div>
+    </section>
+  </div>
 
-      <!-- About Section Button -->
-      <div class="text-center mt-4">
-<f:if condition="{content.btnlink}">
-	<f:link.typolink parameter="{content.btnlink}" class="btn btn-xl btn-outline-light">
-
-          <i class="fas fa-download mr-2"></i>
-          {content.btntxt}
-
-</f:link.typolink>
-</f:if>
-      </div>
-
-    </div>
-  </section>
+</html>

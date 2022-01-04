@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+  <div class="ns-backend-preview aboutus">
+    <h2><b><f:translate key="LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_db.xlf:wizard.ns_aboutus" /></b></h2>
+    <div class="about-backend">
+      <f:if condition="{flexformData.title}">
+        <h1 class="text-center">{flexformData.title}</h1>
+      </f:if>  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <f:if condition="{flexformData.lefttxt}">
+              <p>{flexformData.lefttxt}</p>
+            </f:if>  
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <f:if condition="{flexformData.righttxt}">
+              <p>{flexformData.righttxt}</p>
+            </f:if>  
+          </div>
+        </div>
+        <f:if condition="{flexformData.btntxt}">
+          <p class="text-center btn about-btn"><i class="fa fa-download mr-2"></i> {flexformData.btntxt}</p>
+        </f:if>  
+      </div>
+    </div>
+  </div>
+
+</html>

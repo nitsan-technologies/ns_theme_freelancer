@@ -1,17 +1,27 @@
- <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
-		<f:cObject typoscriptObjectPath="lib.footerContent"/>
-  	</div>
-    </div>
- </footer>
-<section class="copyright py-4 text-center text-white">
-    <div class="container">
-	<small><f:cObject typoscriptObjectPath="lib.copyright"/></small>
-    </div>
- </section>
-  <div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-      <i class="fa fa-chevron-up"></i>
-    </a>
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+      <f:if condition="{settings.childSettings.footerContentId}">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: settings.childSettings.footerContentId}" />
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">  
+          <f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: settings.childSettings.footerContentId}" />
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: settings.childSettings.footerContentId}" />
+        </div>
+      </f:if>  
+   </div>
   </div>
+</footer>
+<section class="copyright py-4 text-center text-white">
+  <div class="container">
+    <small><f:cObject typoscriptObjectPath="lib.copyright"/></small>
+  </div>
+</section>
+<div class="scroll-to-top d-lg-none position-fixed ">
+  <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>

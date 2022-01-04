@@ -1,14 +1,11 @@
 # Includes Basic Configuration of website
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/TypoScript/Configuration" extensions="typoscript">
+@import "EXT:ns_theme_freelancer/Configuration/TypoScript/Configuration"
 
 # Includes EXT:Form Configuration
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/TypoScript/Extensions/Form" extensions="typoscript">
+@import "EXT:ns_theme_freelancer/Configuration/TypoScript/Extensions/Form"
 
 # Includes EXT:Fluid Configuration
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/TypoScript/Extensions/Fluid" extensions="typoscript">
-
-# Includes EXT:Grid Configuration
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/TypoScript/Extensions/GridElements" extensions="typoscript">
+@import "EXT:ns_theme_freelancer/Configuration/TypoScript/Extensions/Fluid"
 
 # Includes Page Configuration
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/TypoScript/Page" extensions="typoscript">
+@import "EXT:ns_theme_freelancer/Configuration/TypoScript/Page"

@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-06T20:41:06Z" product-name="NITSANpageadds">
-		<header/>
-	<body>
+    <file source-language="en" datatype="plaintext" original="messages" date="2015-01-06T20:41:06Z" product-name="NITSANpageadds">
+        <header/>
+    <body>
             <trans-unit id="palette.access">
                 <source>Access</source>
             </trans-unit>
             <trans-unit id="headline">
                 <source>Headline</source>
             </trans-unit>
-  	    <trans-unit id="wizard.ns_banner">
+
+            <trans-unit id="wizard.ns_banner">
                 <source>Banner</source>
             </trans-unit>
             <trans-unit id="wizard.ns_banner.desc">
-                <source>Integrate Banner</source>
+                <source>Integrate Banner With Content and Image</source>
             </trans-unit>
-	    <trans-unit id="wizard.ns_portfolio">
+
+            <trans-unit id="wizard.ns_portfolio">
                 <source>Portfolio item</source>
             </trans-unit>
             <trans-unit id="wizard.ns_portfolio.desc">
-                <source>Add portfolio items</source>
-            </trans-unit>
-	    <trans-unit id="wizard.ns_about">
-                <source>About us</source>
-            </trans-unit>
-            <trans-unit id="wizard.ns_about.desc">
-                <source>Describe about</source>
+                <source>Add portfolio items with Title, Description and Image</source>
             </trans-unit>
 
-<trans-unit id="wizard.ns_social">
+            <trans-unit id="wizard.ns_aboutus">
+                <source>About us</source>
+            </trans-unit>
+            <trans-unit id="wizard.ns_aboutus.desc">
+                <source>About Us Element with Details</source>
+            </trans-unit>
+
+            <trans-unit id="wizard.ns_social">
                 <source>Social media</source>
             </trans-unit>
             <trans-unit id="wizard.ns_social.desc">
                 <source>Share on social media</source>
             </trans-unit>
 
-	</body>
-	</file>
+        </body>
+    </file>
 </xliff>

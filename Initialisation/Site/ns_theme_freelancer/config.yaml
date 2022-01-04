@@ -1,11 +1,15 @@
-rootPageId: 1
-base: '/'
-baseVariants: {  }
+base: /
+disableStaticFileCache: false
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=4'
 languages:
   -
     title: English
     enabled: true
-    languageId: '0'
+    languageId: 0
     base: /
     typo3Language: default
     locale: en_US.UTF-8
@@ -14,11 +18,7 @@ languages:
     hreflang: en-US
     direction: ''
     flag: en-us-gb
-errorHandling:
-  -
-    errorCode: '404'
-    errorHandler: Page
-    errorContentSource: '5'
+rootPageId: 1
 routes:
   -
     route: robots.txt
@@ -27,5 +27,5 @@ routes:
   -
     route: sitemap.xml
     type: uri
-    source: 'http://www.site.com/?sitemap=pages&type=1533906435'
-disableStaticFileCache: false
+    source: 'http://t3t-freelancer.ddev.site/?sitemap=pages&type=1533906435'
+websiteTitle: ''

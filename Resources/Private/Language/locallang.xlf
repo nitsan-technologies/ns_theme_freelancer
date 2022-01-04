@@ -9,7 +9,7 @@
             <trans-unit id="title">
                 <source>Title</source>
             </trans-unit>
-<trans-unit id="menu">
+            <trans-unit id="menu">
                 <source>Menu</source>
             </trans-unit>
 

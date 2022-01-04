@@ -4118,6 +4118,9 @@ input[type="button"].btn-block {
 }
 
 @media (min-width: 992px) {
+  a.nav-link.parent_menu.active {
+    padding: 1rem !important;
+  }
   .navbar-expand-lg {
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -9635,8 +9638,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
 }
@@ -9672,8 +9673,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
@@ -9765,7 +9764,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .portfolio-modal .portfolio-modal-title {
   font-size: 2.25rem;
-  line-height: 2rem;
+  hyphens: manual;
+  word-break: break-word;
 }
 
 @media (min-width: 992px) {
@@ -9793,7 +9793,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .floating-label-form-group input,
 .floating-label-form-group textarea {
-  font-size: 1.5em;
+  font-size: 20px;
   position: relative;
   z-index: 1;
   padding-right: 0;

@@ -1,14 +1,18 @@
-<div class="row">
-<div class="col-md-6 col-lg-4">
-  <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-      <f:if condition="{flexformData.title}">
-	   <h2>{flexformData.title}</h2>
-	</f:if> 
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+  <div class="ns-backend-preview">
+    <h2><b><f:translate key="LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_db.xlf:wizard.ns_portfolio" /></b></h2>
+    <div class="row">
+      <f:for each="{flexformData.portfolio}" as="file">
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto">
+            <f:if condition="{file.container.image}">
+              <f:image src="{file.container.image}" class="img-fluid" alt="portfolio-img" />
+            </f:if>
+          </div>
+        </div>
+      </f:for>
     </div>
-	<f:if condition="{flexformData.image}">
-	   <f:image src="{flexformData.image}" class="img-fluid5" alt="portfolio-img" />
-	</f:if> 
   </div>
-</div>
-</div>
+
+</html>

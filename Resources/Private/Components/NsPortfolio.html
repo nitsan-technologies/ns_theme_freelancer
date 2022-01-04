@@ -1,56 +1,79 @@
-  <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal{data.uid}">
-    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-      <div class="portfolio-item-caption-content text-center text-white">
-        <i class="fas fa-plus fa-3x"></i>
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+  <section class="page-section portfolio {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
+    id="portfolio">
+    <div class="container">
+      <f:if condition="{content.title}">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{content.title}</h2>
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+      </f:if>
+      <div class="row">  
+        <f:for each="{content.portfolio}" as="file">
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal{file.image}">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <f:if condition="{file.image}">
+                <f:image src="{file.image}" class="img-fluid" alt="portfolio-img" maxWidth="400" maxHeight="289" />
+              </f:if>
+            </div>
+          </div>
+        </f:for>
       </div>
     </div>
-	<f:if condition="{content.image}">
-	   <f:image src="{content.image}" class="img-fluid" alt="portfolio-img" maxWidth="400" />
-	</f:if> 
-  </div>
-<!-- Portfolio Modal 2 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal{data.uid}" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-		<f:if condition="{content.title}">
-                	<h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{content.title}</h2>
-		</f:if>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
+    <f:for each="{content.portfolio}" as="file">
+      <div class="portfolio-modal modal fade" id="portfolioModal{file.image}" tabindex="-1" role="dialog"
+        aria-labelledby="portfolioModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            <div class="modal-body text-center">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <f:if condition="{file.headline}">
+                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{file.headline}</h2>
+                      <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <div class="divider-custom-line"></div>
+                      </div>
+                    </f:if>  
+                    <f:if condition="{file.image}">
+                      <f:image src="{file.image}" class="img-fluid rounded mb-5" alt="portfolio-img" width="750"
+                        height="542" />
+                    </f:if>
+
+                    <f:if condition="{file.description}">
+                      <p class="mb-5">{file.description}</p>
+                    </f:if>
+                    <button class="btn btn-primary" href="#" data-dismiss="modal">
+                      <i class="fas fa-times fa-fw"></i>
+                      <f:translate key="closew" extensionName="ns_theme_freelancer" />
+                    </button>
                   </div>
-                  <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Modal - Image -->
-		<f:if condition="{content.image}">
-		   <f:image src="{content.image}" class="img-fluid rounded mb-5" alt="portfolio-img" maxWidth="750" />
-		</f:if>
-                <!-- Portfolio Modal - Text -->
-		
-		<f:if condition="{content.description}">
-		   <p class="mb-5">{content.description}</p>
-		</f:if>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  <f:translate key="closew" extensionName="ns_theme_freelancer" />
-                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </f:for>
+  </section>
 
+</html>

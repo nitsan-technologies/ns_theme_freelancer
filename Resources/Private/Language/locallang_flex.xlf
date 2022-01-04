@@ -105,6 +105,9 @@
             <trans-unit id="Contact.title">
                 <source>Contact Me</source>
             </trans-unit>
+            <trans-unit id="general.fields">
+                <source>Fields</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

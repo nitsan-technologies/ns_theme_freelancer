@@ -1,20 +1,26 @@
-<header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-	    <f:if condition="{image}">
-            <f:image image="{image.0}" class="masthead-avatar mb-5" alt="banner-img" maxWidth="240" maxHeight="255" />
-      	</f:if> 
-      	<f:if condition="{content.headline}">
-            <h1 class="masthead-heading text-uppercase mb-0">{content.headline}</h1>
-      	</f:if>
-        <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <header id="home" class="masthead bg-primary text-white text-center {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+        <div class="container d-flex align-items-center flex-column">
+            <f:if condition="{image}">
+                <f:for each="{image}" as="file">
+                    <f:image image="{file}" height="270c" width="255c" />
+                </f:for>
+            </f:if>
+            <f:if condition="{content.headline}">
+                <h1 class="masthead-heading text-uppercase mb-0">{content.headline}</h1>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </f:if>
+            <f:if condition="{content.text}">
+                <p class="masthead-subheading font-weight-light mb-0">{content.text}</p>
+            </f:if>
         </div>
-        <f:if condition="{content.text}">
-            <p class="masthead-subheading font-weight-light mb-0">{content.text}</p>
-        </f:if>
-    </div>
-</header>
+    </header>
+
+</html>

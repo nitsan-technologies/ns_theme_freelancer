@@ -3,7 +3,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Fields</sheetTitle>
+                    <sheetTitle>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fields</sheetTitle>
                 </TCEforms>
                 <el>
                     <image>
@@ -84,6 +84,8 @@
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.heading</label>
                             <config>
                                 <type>input</type>
+                                <size>30</size>
+                                <eval>trim,required</eval>
                             </config>
                         </TCEforms>
                     </headline>

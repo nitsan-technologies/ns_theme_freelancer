@@ -15,6 +15,15 @@
 			<trans-unit id="footer">
 				<source>Footer (is inherited)</source>
 			</trans-unit>
+			<trans-unit id="col1">
+				<source>Column 1</source>
+			</trans-unit>
+			<trans-unit id="col2">
+				<source>Column 2</source>
+			</trans-unit>
+			<trans-unit id="col3">
+				<source>Column 3</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

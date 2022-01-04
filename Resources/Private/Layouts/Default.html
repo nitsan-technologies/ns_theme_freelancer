@@ -1,17 +1,21 @@
 <!-- Header -->
-<f:render partial="Header" arguments="{_all}"/>
+<f:render partial="Header" arguments="{_all}" />
 
 <!--TYPO3SEARCH_begin-->
-<f:if condition="{data.layout} == 1">
-	<f:then>
-		
-	</f:then>
-	<f:else>
+<f:switch expression="{data.layout}">
+	<f:case value="1">
+		<div class="container">
+			<f:cObject typoscriptObjectPath="lib.content" />
+		</div>
+	</f:case>
+	<f:case value="2">
+		<f:cObject typoscriptObjectPath="lib.content" />
+	</f:case>
+	<f:defaultCase>
+		<f:cObject typoscriptObjectPath="lib.headerContent" />
 		<f:cObject typoscriptObjectPath="lib.PageContent" />
-	</f:else>
-</f:if>
-
-
+	</f:defaultCase>
+</f:switch>
 <!--TYPO3SEARCH_end-->
 
 <!-- Footer -->

@@ -3,7 +3,7 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Fields</sheetTitle>
+                    <sheetTitle>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fields</sheetTitle>
                 </TCEforms>
                 <el>
                     <title>
@@ -14,7 +14,7 @@
                                 <eval>required</eval>
                             </config>
                         </TCEforms>
-                    </title>		    
+                    </title>            
                     <fblink>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fblink</label>
@@ -35,7 +35,7 @@
                             </config>
                         </TCEforms>
                     </fblink> 
- 		            <twlink>
+                    <twlink>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.twlink</label>
                             <config>
@@ -55,7 +55,7 @@
                             </config>
                         </TCEforms>
                     </twlink> 
-		            <inlink>
+                    <inlink>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.inlink</label>
                             <config>
@@ -75,7 +75,7 @@
                             </config>
                         </TCEforms>
                     </inlink> 
-		            <drilink>
+                    <drilink>
                         <TCEforms>
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.drilink</label>
                             <config>
@@ -95,7 +95,7 @@
                             </config>
                         </TCEforms>
                      </drilink>
-		        </el>                           
+                </el>                           
             </ROOT>
         </sDEF>
     </sheets>

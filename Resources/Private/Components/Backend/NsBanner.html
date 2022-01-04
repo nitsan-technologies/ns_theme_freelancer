@@ -1,23 +1,32 @@
- <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-	<f:if condition="{flexformData.image}">
-           <f:image src="{flexformData.image}" class="masthead-avatar mb-5" alt="banner-img" />
-      	</f:if> 
-	
-	<f:if condition="{flexformData.headline}">
-      		<h1 class="masthead-heading text-uppercase mb-0">{flexformData.headline}</h1>
-	</f:if>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
+  <div class="ns-backend-preview">
+    <h2><b><f:translate key="LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_db.xlf:wizard.ns_banner" /></b></h2>
+    <header class="masthead text-white text-center">
+      <div class="d-flex align-items-center flex-column header-component">
+        <div class="header-image">
+          <f:if condition="{image}">
+            <f:for each="{image}" as="file">
+              <f:image image="{file}" height="255c" width="240c" />
+            </f:for>
+          </f:if>
         </div>
-        <div class="divider-custom-line"></div>
+        <f:if condition="{flexformData.headline}">
+          <h1 class="masthead-heading text-uppercase mb-0">{flexformData.headline}</h1>
+
+          <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+              <i class="fa fa-star"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+          </div>
+        </f:if>
+        <f:if condition="{flexformData.text}">
+          <p class="masthead-subheading font-weight-light mb-0">{flexformData.text}</p>
+        </f:if>
       </div>
-	
-	<f:if condition="{flexformData.text}">
-      		<p class="masthead-subheading font-weight-light mb-0">{flexformData.text}</p>
-	</f:if>
-    </div>
-  </header>
+    </header>
+  </div>
+
+</html>

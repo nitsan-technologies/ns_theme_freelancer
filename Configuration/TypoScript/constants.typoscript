@@ -2,8 +2,8 @@
 ns_theme_freelancer {	
 	website {
 		settings {
-			#cat = ns_theme_freelancer/website/settings/01; type=string; label=YourLabel
-			#myvariable = 
+			#cat = ns_basetheme/110/04; type=int; label=Footer Content Id: Setup footer content-id of your footer Content
+			footerContentId = 
 			
 			#cat = ns_theme_freelancer/website/settings/01; type=string; label=Google analytics code
 			googleanalytics = 

@@ -1,7 +1,19 @@
 # Include the BackendLayouts
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ns_theme_freelancer/Configuration/PageTSconfig/BackendLayouts" extensions="typoscript">
+@import "EXT:ns_theme_freelancer/Configuration/PageTSconfig/BackendLayouts"
+
+TCEFORM {
+    pages {
+        layout {
+            altLabels {
+                1 = With Container
+                2 = Without Container
+            }    
+            removeItems = 3
+        }
+    }
+}
 
 # Remove default custom elements from EXT:ns_basetheme 
 mod.wizards.newContentElement.wizardItems.extra {
-  show := removeFromList(ns_imageteaser, ns_record, ns_slider)
+    show := removeFromList(ns_imageteaser, ns_record, ns_slider)
 }

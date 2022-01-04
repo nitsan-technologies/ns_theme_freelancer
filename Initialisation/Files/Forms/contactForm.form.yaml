@@ -1,4 +1,3 @@
-
 renderingOptions:
   submitButtonLabel: Send
 type: Form
@@ -9,21 +8,34 @@ finishers:
   -
     options:
       subject: 'Theme-  Freelancer'
-      recipientAddress: '{text-3}'
-      recipientName: '{text-1}'
       senderAddress: '{text-3}'
       senderName: '{text-1}'
-      replyToAddress: '{text-3}'
-      carbonCopyAddress: ''
-      blindCarbonCopyAddress: ''
       format: html
       attachUploads: true
+      recipients:
+        '{text-3}': '{text-1}'
+      replyToRecipients:
+        '{text-3}': ''
     identifier: EmailToSender
   -
     options:
-      pageUid: '6'
+      pageUid: '5'
       additionalParameters: ''
     identifier: Redirect
+  -
+    options:
+      subject: '{textarea-1}'
+      recipients:
+        t3admn@gmail.com: 'Theme-  Freelancer'
+      senderAddress: '{text-3}'
+      senderName: '{text-1}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: Default
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToReceiver
 renderables:
   -
     renderingOptions:
