@@ -3,7 +3,7 @@
 // Provide detailed information and depenencies of EXT:ns_theme_freelancer
 $EM_CONF['ns_theme_freelancer'] = [
 	'title' => '[NITSAN] T3 Freelancer TYPO3 Template',
-	'description' => 'Every freelancer's dream just came true, as we've made T3 freelancer, Free TYPO3 Portfolio Template! Live-Demo: https://demo.t3terminal.com/?theme=t3t-freelancer PRO-version: https://t3terminal.com/t3-freelancer-free-typo3-portfolio-template',
+	'description' => 'Every freelancer dream just came true, as we have ve made T3 freelancer, Free TYPO3 Portfolio Template! Live-Demo: https://demo.t3terminal.com/?theme=t3t-freelancer PRO-version: https://t3terminal.com/t3-freelancer-free-typo3-portfolio-template',
 	'category' => 'templates',
 	'author' => 'Team NITSAN',
 	'author_email' => 'info@nitsan.in',
