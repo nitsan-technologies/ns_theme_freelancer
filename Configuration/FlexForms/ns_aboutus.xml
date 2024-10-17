@@ -2,47 +2,47 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
+               
                     <sheetTitle>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fields</sheetTitle>
-                </TCEforms>
+                
                 <el>
                     <title>
-                        <TCEforms>
+                       
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.title</label>
                             <config>
                                 <type>input</type>
                                 <eval>required</eval>
                             </config>
-                        </TCEforms>
+                        
                     </title>
                     <lefttxt>
-                        <TCEforms>
+                       
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.lefttxt</label>
                             <config>
                                 <type>text</type>
                                 <row>20</row>
                             </config>
-                        </TCEforms>
+                        
                     </lefttxt>
  		             <righttxt>
-                        <TCEforms>
+                       
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.righttxt</label>
                             <config>
                                 <type>text</type>
                                 <row>20</row>
                             </config>
-                        </TCEforms>
+                        
                     </righttxt>
 		            <btntxt>
-                        <TCEforms>
+                       
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btntxt</label>
                             <config>
                                 <type>input</type>
                             </config>
-                        </TCEforms>
+                        
                     </btntxt>
 		            <btnlink>
-                        <TCEforms>
+                       
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btnlink</label>
                             <config>
                                 <type>input</type>
@@ -59,7 +59,7 @@
                                     </linkPopup>
                                 </fieldControl>
                             </config>
-                        </TCEforms>
+                        
                     </btnlink>
 		        </el>
             </ROOT>

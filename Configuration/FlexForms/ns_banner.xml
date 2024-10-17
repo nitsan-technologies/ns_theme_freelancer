@@ -2,12 +2,12 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
+              
                     <sheetTitle>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fields</sheetTitle>
-                </TCEforms>
+                
                 <el>
                     <image>
-                        <TCEforms>
+                      
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.image</label>
                             <config>
                                 <type>inline</type>
@@ -77,27 +77,27 @@
                                     </types>
                                 </overrideChildTca>
                             </config>
-                        </TCEforms>
+                        
                     </image>
                     <headline>
-                        <TCEforms>
+                      
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.heading</label>
                             <config>
                                 <type>input</type>
                                 <size>30</size>
                                 <eval>trim,required</eval>
                             </config>
-                        </TCEforms>
+                        
                     </headline>
                     <text>
-                        <TCEforms>
+                      
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.content</label>
                             <config>
                                 <type>text</type>
                                 <rows>3</rows>
                                 <cols>40</cols>
                             </config>
-                        </TCEforms>
+                        
                     </text>                    
                 </el>                           
             </ROOT>

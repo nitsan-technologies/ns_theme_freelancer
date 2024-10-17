@@ -2,21 +2,21 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
+                
                     <sheetTitle>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fields</sheetTitle>
-                </TCEforms>
+                
                 <el>
                     <title>
-                        <TCEforms>
+                        
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.title</label>
                             <config>
                                 <type>input</type>                                               
                                 <eval>required</eval>
                             </config>
-                        </TCEforms>
+                        
                     </title>            
                     <fblink>
-                        <TCEforms>
+                        
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fblink</label>
                             <config>
                                 <type>input</type>
@@ -33,10 +33,10 @@
                                     </linkPopup>
                                 </fieldControl>
                             </config>
-                        </TCEforms>
+                        
                     </fblink> 
                     <twlink>
-                        <TCEforms>
+                        
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.twlink</label>
                             <config>
                                 <type>input</type>
@@ -53,10 +53,10 @@
                                     </linkPopup>
                                 </fieldControl>
                             </config>
-                        </TCEforms>
+                        
                     </twlink> 
                     <inlink>
-                        <TCEforms>
+                        
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.inlink</label>
                             <config>
                                 <type>input</type>
@@ -73,10 +73,10 @@
                                     </linkPopup>
                                 </fieldControl>
                             </config>
-                        </TCEforms>
+                        
                     </inlink> 
                     <drilink>
-                        <TCEforms>
+                        
                             <label>LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.drilink</label>
                             <config>
                                 <type>input</type>
@@ -93,7 +93,7 @@
                                     </linkPopup>
                                 </fieldControl>
                             </config>
-                        </TCEforms>
+                        
                      </drilink>
                 </el>                           
             </ROOT>
