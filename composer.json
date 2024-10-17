@@ -24,7 +24,7 @@
   "license": "MIT",
   "require": {
     "typo3/cms-core": "^13.0 ",
-    "nitsan/ns-basetheme": "^13.0"
+    "nitsan/ns-basetheme": "^12 || ^13"
   },
   "replace": {
       "typo3-ter/ns-theme-freelancer": "self.version"
