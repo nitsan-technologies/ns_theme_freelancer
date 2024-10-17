@@ -13,7 +13,7 @@ $EM_CONF['ns_theme_freelancer'] = [
 	'constraints' => [
 		'depends' => [
 			'typo3' => '13.0.0-13.4.99',
-			'ns_basetheme' => '13.0.0-13.5.99',
+			'ns_basetheme' => '12.0.0-13.4.99',
 		],
 		'conflicts' => [
 		],
