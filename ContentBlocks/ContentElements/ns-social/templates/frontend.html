@@ -1,0 +1,29 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+  <section class="{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+    <f:if condition="{data.title}">
+      <h4 class="text-uppercase mb-4">{data.title}</h4>
+    </f:if>
+    <f:if condition="{data.fblink}">
+      <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{data.fblink}">
+        <i class="fab fa-fw fa-facebook-f"></i>
+      </f:link.typolink>
+    </f:if>
+    <f:if condition="{data.twlink}">
+      <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{data.twlink}">
+        <i class="fab fa-fw fa-twitter"></i>
+      </f:link.typolink>
+    </f:if>
+    <f:if condition="{data.inlink}">
+      <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{data.inlink}">
+        <i class="fab fa-fw fa-linkedin-in"></i>
+      </f:link.typolink>
+    </f:if>
+    <f:if condition="{data.drilink}">
+      <f:link.typolink target="_blank" class="btn btn-outline-light btn-social mx-1" parameter="{data.drilink}">
+        <i class="fab fa-fw fa-dribbble"></i>
+      </f:link.typolink>
+    </f:if>
+  </section>
+
+</html>

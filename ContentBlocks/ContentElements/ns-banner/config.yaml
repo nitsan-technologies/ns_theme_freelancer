@@ -1,0 +1,40 @@
+name: nitsan/ns-banner
+typeName: nitsan_nsbanner
+group: t3karma_content_blocks
+prefixFields: false
+prefixType: vendor
+fields:
+  -
+    identifier: image
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.image'
+    type: File
+    allowed:
+      - jpg
+      - png
+      - svg
+      - jpeg
+      - gif
+    maxitems: 1
+  -
+    identifier: headline
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.heading'
+    type: Text
+    required: true
+  -
+    identifier: text
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.content'
+    type: Textarea
+    rows: 3
+    enableRichtext: false
+  -
+    identifier: appearance_tab
+    type: Tab
+    label: Appearance
+  -
+    identifier: space_before_class
+    type: Text
+    useExistingField: true
+  -
+    identifier: space_after_class
+    type: Text
+    useExistingField: true
