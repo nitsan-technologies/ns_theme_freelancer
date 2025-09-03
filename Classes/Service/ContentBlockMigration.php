@@ -5,6 +5,7 @@ namespace  NITSAN\NsThemeFreelancer\Service;
 use SimpleXMLElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\LinkHandling\LinkService;
 use NITSAN\NsThemeFreelancer\Domain\Repository\ContentBlocksRepository;
 
 
@@ -339,11 +340,10 @@ class ContentBlockMigration
 
  private function migratePortfolio(int $uid, int $pid, string $cType, array $parsed, int $langUid): void
 {
-    // Update main tt_content row
     $data = [
         'CType'              => $cType,
-        'header'             => $parsed['headline'] ?? '', // main headline
-        'bodytext'           => $parsed['description'] ?? '', // map description to bodytext
+        'header'             => $parsed['headline'] ?? '', 
+        'bodytext'           => $parsed['description'] ?? '', 
         'space_before_class' => $parsed['space_before_class'] ?? '',
         'space_after_class'  => $parsed['space_after_class'] ?? '',
         'sys_language_uid'   => $langUid,
@@ -364,7 +364,7 @@ class ContentBlockMigration
                 'foreign_table_parent_uid' => $uid,
                 'sys_language_uid'         => $langUid,
                 'headline'                 => $portfolioItem['headline'] ?? '',
-                'bodytext'                 => $portfolioItem['description'] ?? '', // use bodytext in child table
+                'bodytext'                 => $portfolioItem['description'] ?? '',
                 'image'                    => $imagePath,
             ];
 
@@ -387,19 +387,35 @@ class ContentBlockMigration
 
         $this->updateTtContent($data, $uid, $pid);
     }
-    private function migrateSocial($uid, $pid, $cType, $parsed, $langUid)
+    private function migrateSocial($uid, $pid, $cType, $parsed, $langUid): void
     {
-        $data = [
-            'CType' => $cType,
-            'title' => $parsed['title'] ?? '',
-            'fblink' => $parsed['fblink'] ?? '',
-            'twlink' => $parsed['twlink'] ?? '',
-            'inlink' => $parsed['inlink'] ?? '',
-            'drilink' => $parsed['drilink'] ?? '',
-            'sys_language_uid' => $langUid,
-        ];
+            $linkService = GeneralUtility::makeInstance(LinkService::class);
 
-        $this->updateTtContent($data, $uid, $pid);
+            $links = [
+                'fblink' => $parsed['fblink'] ?? '',
+                'twlink' => $parsed['twlink'] ?? '',
+                'inlink' => $parsed['inlink'] ?? '',
+                'drilink' => $parsed['drilink'] ?? '',
+            ];
+
+            // Convert TypolinkParameter objects to string URLs
+            foreach ($links as $key => $link) {
+                if ($link instanceof \TYPO3\CMS\Core\LinkHandling\TypolinkParameter) {
+                    $links[$key] = $linkService->resolve($link)->getAbsoluteUri();
+                }
+            }
+
+            $data = [
+                'CType' => $cType,
+                'title' => $parsed['title'] ?? '',
+                'fblink' => $links['fblink'],
+                'twlink' => $links['twlink'],
+                'inlink' => $links['inlink'],
+                'drilink' => $links['drilink'],
+                'sys_language_uid' => $langUid,
+            ];
+
+            $this->updateTtContent($data, $uid, $pid);
     }
 
       private function updateTtContent($data, $uid, $pid)
