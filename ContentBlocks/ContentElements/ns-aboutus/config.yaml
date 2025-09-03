@@ -1,6 +1,6 @@
 name: nitsan/ns-aboutus
 typeName: nitsan_nsaboutus
-group: nsfreelancer_Blocks
+group: nsfreelancer_blocks
 prefixFields: false
 prefixType: vendor
 fields:

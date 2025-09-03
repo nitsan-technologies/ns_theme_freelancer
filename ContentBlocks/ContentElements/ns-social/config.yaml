@@ -1,6 +1,6 @@
 name: nitsan/ns-social
 typeName: nitsan_nssocial
-group: nsfreelancer_Blocks
+group: nsfreelancer_blocks
 prefixFields: false
 prefixType: vendor
 fields:

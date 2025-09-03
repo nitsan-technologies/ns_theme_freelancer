@@ -363,7 +363,7 @@ class ContentBlockMigration
                 'pid'                      => $pid,
                 'foreign_table_parent_uid' => $uid,
                 'sys_language_uid'         => $langUid,
-                'headline'                 => $portfolioItem['headline'] ?? '',
+                'header'                   => $portfolioItem['headline'] ?? '',
                 'bodytext'                 => $portfolioItem['description'] ?? '',
                 'image'                    => $imagePath,
             ];
@@ -378,7 +378,7 @@ class ContentBlockMigration
         $data = [
             'CType' => $cType,
             'title' => $parsed['title'] ?? '',
-            'bodytext' => $parsed['lefttxt'] ?? '',
+            'lefttxt' => $parsed['lefttxt'] ?? '',
             'righttxt' => $parsed['righttxt'] ?? '',
             'btntxt' => $parsed['btntxt'] ?? '',
             'btnlink' => $parsed['btnlink'] ?? '',
