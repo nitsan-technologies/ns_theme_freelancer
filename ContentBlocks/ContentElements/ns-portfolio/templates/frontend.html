@@ -23,8 +23,9 @@
                 </div>
               </div>
               <f:if condition="{file.image}">
-                <f:image src="{file.image}" class="img-fluid" alt="portfolio-img" maxWidth="400" maxHeight="289" />
-              </f:if>
+              <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}" /></f:variable>
+              <img src="{imageUrl}" class="img-fluid" alt="portfolio-img" />
+            </f:if>
             </div>
           </div>
         </f:for>
@@ -54,10 +55,10 @@
                         <div class="divider-custom-line"></div>
                       </div>
                     </f:if>  
-                    <f:if condition="{file.image}">
-                      <f:image src="{file.image}" class="img-fluid rounded mb-5" alt="portfolio-img" width="750"
-                        height="542" />
-                    </f:if>
+                     <f:if condition="{file.image}">
+                      <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}" /></f:variable>
+                      <img src="{imageUrl}" class="img-fluid" alt="portfolio-img" />
+                     </f:if>
 
                     <f:if condition="{file.description}">
                       <p class="mb-5">{file.description}</p>

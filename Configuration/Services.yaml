@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  NITSAN\NsThemeFreelancer\Updates\ContentBlockMigration:
+    tags:
+      - name: 'typo3.install.upgrade.wizard'
