@@ -17,6 +17,10 @@
                 <source>Close Window</source>
             </trans-unit>
 
+            <trans-unit id="contentBlocks.nsfreelancer_Blocks">
+                <source>Content Blocks</source>
+            </trans-unit>
+
 		</body>
 	</file>
 </xliff>

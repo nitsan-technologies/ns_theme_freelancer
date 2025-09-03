@@ -17,3 +17,7 @@ TCEFORM {
 mod.wizards.newContentElement.wizardItems.extra {
     show := removeFromList(ns_imageteaser, ns_record, ns_slider)
 }
+
+mod.wizards.newContentElement.wizardItems {
+    nsthemefreelancer_content_blocks.header = LLL:EXT:ns_theme_t3karma/Resources/Private/Language/locallang.xlf:contentBlocks.nsfreelancer_Blocks
+}

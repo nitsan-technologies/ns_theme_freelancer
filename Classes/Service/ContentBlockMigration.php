@@ -379,7 +379,7 @@ class ContentBlockMigration
             'CType' => $cType,
             'title' => $parsed['title'] ?? '',
             'bodytext' => $parsed['lefttxt'] ?? '',
-            'righupdateTtContentttext' => $parsed['righttxt'] ?? '',
+            'righttxt' => $parsed['righttxt'] ?? '',
             'btntxt' => $parsed['btntxt'] ?? '',
             'btnlink' => $parsed['btnlink'] ?? '',
             'sys_language_uid' => $langUid,
