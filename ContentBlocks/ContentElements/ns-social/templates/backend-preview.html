@@ -5,24 +5,28 @@
     <f:if condition="{data.title}">
       <h4 class="text-uppercase mb-4">{data.title}</h4>
     </f:if>
-
+    
     <f:if condition="{data.fblink}">
-      <a class="btn btn-outline-light btn-social mx-1" href="{data.fblink}">
+      <f:variable name="fblink"><f:uri.typolink parameter="{data.fblink}" absolute="1" /></f:variable>
+      <a class="btn btn-outline-light btn-social mx-1" href="{fblink}">
         <i class="fa fa-facebook-f"></i>
       </a>
     </f:if>
     <f:if condition="{data.twlink}">
-      <a class="btn btn-outline-light btn-social mx-1" href="{data.twlink}">
+      <f:variable name="twlink"><f:uri.typolink parameter="{data.twlink}" absolute="1" /></f:variable>
+      <a class="btn btn-outline-light btn-social mx-1" href="{twlink}">
         <i class="fa fa-twitter"></i>
       </a>
     </f:if>
     <f:if condition="{data.inlink}">
-      <a class="btn btn-outline-light btn-social mx-1" href="{data.inlink}">
+      <f:variable name="inlink"><f:uri.typolink parameter="{data.inlink}" absolute="1" /></f:variable>
+      <a class="btn btn-outline-light btn-social mx-1" href="{inlink}">
         <i class="fa fa-linkedin"></i>
       </a>
     </f:if>
     <f:if condition="{data.drilink}">
-      <a class="btn btn-outline-light btn-social mx-1" href="{data.drilink}">
+      <f:variable name="drilink"><f:uri.typolink parameter="{data.drilink}" absolute="1" /></f:variable>
+      <a class="btn btn-outline-light btn-social mx-1" href="{drilink}">
         <i class="fa fa-dribbble"></i>
       </a>
     </f:if>

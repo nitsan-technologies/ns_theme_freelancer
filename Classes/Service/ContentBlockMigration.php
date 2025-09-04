@@ -326,12 +326,13 @@ class ContentBlockMigration
                 break;
         }
     }
+    
     private function migrateBanner($uid, $pid, $cType, $parsed, $langUid)
     {
         $data = [
             'CType' => $cType,
-            'header' => $parsed['headline'] ?? '',
-            'bodytext' => $parsed['text'] ?? '',
+            'headline' => $parsed['headline'] ?? '',
+            'text' => $parsed['text'] ?? '',
             'sys_language_uid' => $langUid,
         ];
 
@@ -342,19 +343,20 @@ class ContentBlockMigration
 {
     $data = [
         'CType'              => $cType,
-        'header'             => $parsed['headline'] ?? '', 
-        'bodytext'           => $parsed['description'] ?? '', 
+        'headline'           => $parsed['headline'] ?? '', 
+        'description'        => $parsed['description'] ?? '', 
         'space_before_class' => $parsed['space_before_class'] ?? '',
         'space_after_class'  => $parsed['space_after_class'] ?? '',
+        'portfolio' => isset($parsed['portfolio']) ? count($parsed['portfolio']) : 0,
         'sys_language_uid'   => $langUid,
     ];
 
     $this->updateTtContent($data, $uid, $pid);
 
-    if (!empty($parsed['portfolioItem'])) {
-        foreach ($parsed['portfolioItem'] as $portfolioItem) {
+    if (!empty($parsed['portfolio'])) {
+        foreach ($parsed['portfolio'] as $portfolio) {
             $randomString = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Utility\StringUtility::class)->getUniqueId('NEW');
-            $imagePath = $portfolioItem['image'] ?? '';
+            $imagePath = $portfolio['image'] ?? '';
             if (!str_starts_with($imagePath, 't3://file')) {
                 $imagePath = 't3://file?uid=' . (int)$imagePath;
             }
@@ -363,8 +365,8 @@ class ContentBlockMigration
                 'pid'                      => $pid,
                 'foreign_table_parent_uid' => $uid,
                 'sys_language_uid'         => $langUid,
-                'header'                   => $portfolioItem['headline'] ?? '',
-                'bodytext'                 => $portfolioItem['description'] ?? '',
+                'headline'                 => $portfolio['headline'] ?? '',
+                'description'                 => $portfolio['description'] ?? '',
                 'image'                    => $imagePath,
             ];
 
@@ -392,6 +394,7 @@ class ContentBlockMigration
             $linkService = GeneralUtility::makeInstance(LinkService::class);
 
             $links = [
+                'title' => $parsed['title'] ?? '',
                 'fblink' => $parsed['fblink'] ?? '',
                 'twlink' => $parsed['twlink'] ?? '',
                 'inlink' => $parsed['inlink'] ?? '',
