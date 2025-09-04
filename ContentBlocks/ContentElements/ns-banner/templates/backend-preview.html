@@ -5,12 +5,13 @@
     <header class="masthead text-white text-center">
       <div class="d-flex align-items-center flex-column header-component">
         <div class="header-image">
-          <f:if condition="{image}">
-            <f:for each="{image}" as="file">
-              <f:image image="{file}" height="255c" width="240c" />
-            </f:for>
-          </f:if>
+          <f:if condition="{data.image}">
+                <f:for each="{data.image}" as="file">
+                    <f:image image="{file}" height="270c" width="255c" />
+                </f:for>
+            </f:if>
         </div>
+        
         <f:if condition="{data.headline}">
           <h1 class="masthead-heading text-uppercase mb-0">{data.headline}</h1>
 

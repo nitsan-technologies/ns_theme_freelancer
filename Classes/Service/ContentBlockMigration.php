@@ -343,11 +343,9 @@ class ContentBlockMigration
 {
     $data = [
         'CType'              => $cType,
-        'headline'           => $parsed['headline'] ?? '', 
-        'description'        => $parsed['description'] ?? '', 
-        'space_before_class' => $parsed['space_before_class'] ?? '',
-        'space_after_class'  => $parsed['space_after_class'] ?? '',
-        'portfolio' => isset($parsed['portfolio']) ? count($parsed['portfolio']) : 0,
+        'headline'           => $parsed['headline'] ?? '',
+        'title'              => $parsed['title'] ?? '', 
+        'portfolio'          => isset($parsed['portfolio']) ? count($parsed['portfolio']) : 0,
         'sys_language_uid'   => $langUid,
     ];
 
@@ -355,7 +353,7 @@ class ContentBlockMigration
 
     if (!empty($parsed['portfolio'])) {
         foreach ($parsed['portfolio'] as $portfolio) {
-            $randomString = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Utility\StringUtility::class)->getUniqueId('NEW');
+            $randomString = StringUtility::getUniqueId('NEW');
             $imagePath = $portfolio['image'] ?? '';
             if (!str_starts_with($imagePath, 't3://file')) {
                 $imagePath = 't3://file?uid=' . (int)$imagePath;
@@ -366,7 +364,7 @@ class ContentBlockMigration
                 'foreign_table_parent_uid' => $uid,
                 'sys_language_uid'         => $langUid,
                 'headline'                 => $portfolio['headline'] ?? '',
-                'description'                 => $portfolio['description'] ?? '',
+                'description'              => $portfolio['description'] ?? '',
                 'image'                    => $imagePath,
             ];
 
