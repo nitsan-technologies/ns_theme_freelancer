@@ -4,6 +4,7 @@ namespace  NITSAN\NsThemeFreelancer\Service;
 
 use SimpleXMLElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\LinkHandling\LinkService;
 use NITSAN\NsThemeFreelancer\Domain\Repository\ContentBlocksRepository;
