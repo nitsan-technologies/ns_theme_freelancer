@@ -19,5 +19,5 @@ mod.wizards.newContentElement.wizardItems.extra {
 }
 
 mod.wizards.newContentElement.wizardItems {
-    nsthemefreelancer_content_blocks.header = LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang.xlf:nsfreelancer_content_blocks
+    nsfreelancer_blocks.header = LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang.xlf:nsfreelancer_blocks
 }

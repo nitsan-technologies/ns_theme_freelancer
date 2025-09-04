@@ -17,8 +17,8 @@
                 <source>Close Window</source>
             </trans-unit>
 
-            <trans-unit id="nsfreelancer_content_blocks">
-                <source>NsFreelancer Content Blocks</source>
+            <trans-unit id="nsfreelancer_blocks">
+                <source>Content Blocks</source>
             </trans-unit>
 
 		</body>
