@@ -327,7 +327,7 @@ class ContentBlockMigration
                 break;
         }
     }
-    
+
     private function migrateBanner($uid, $pid, $cType, $parsed, $langUid)
     {
         $data = [
@@ -345,7 +345,7 @@ class ContentBlockMigration
     $data = [
         'CType'              => $cType,
         'headline'           => $parsed['headline'] ?? '',
-        'title'              => $parsed['title'] ?? '', 
+        'title'              => $parsed['title'] ?? '',
         'portfolio'          => isset($parsed['portfolio']) ? count($parsed['portfolio']) : 0,
         'sys_language_uid'   => $langUid,
     ];
