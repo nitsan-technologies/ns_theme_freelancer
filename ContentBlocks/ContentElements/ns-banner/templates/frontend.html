@@ -4,8 +4,8 @@
         <div class="container d-flex align-items-center flex-column">
             <f:if condition="{data.image}">
                 <f:for each="{data.image}" as="file">
-                    <f:image image="{file}" height="270c" width="255c" />
-                </f:for>
+                  <img src="{file.publicUrl}" alt="{file.alternative}" title="{file.title}" height="270c" width="255c" />
+                </f:for> 
             </f:if>
             <f:if condition="{data.headline}">
                 <h1 class="masthead-heading text-uppercase mb-0">{data.headline}</h1>

@@ -16,17 +16,21 @@
         <div class="row">
           <div class="col-lg-4 ml-auto">
             <f:if condition="{data.lefttxt}">
-              <p class="lead">{data.lefttxt}</p>
+              <div class="about-section__left-content">
+                <p class="lead">{data.lefttxt}</p>
+              </div>
             </f:if>
           </div>
           <div class="col-lg-4 mr-auto">
             <f:if condition="{data.righttxt}">
-              <p class="lead">{data.righttxt}</p>
+              <div class="about-section__right-content">
+                <p class="lead">{data.righttxt}</p>
+              </div>
             </f:if>
           </div>
         </div>
         <div class="text-center mt-4">
-          <f:if condition="{data.btntxt} && {data.btnlink}">
+          <f:if condition="{data.btntxt} && {data.btnlink.url} != ''">
             <f:link.typolink class="btn btn-xl btn-outline-light" parameter="{data.btnlink}">
               <i class="fas fa-download mr-2"></i>
               {data.btntxt}

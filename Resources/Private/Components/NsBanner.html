@@ -4,7 +4,7 @@
         <div class="container d-flex align-items-center flex-column">
             <f:if condition="{image}">
                 <f:for each="{image}" as="file">
-                    <f:image image="{file}" height="270c" width="255c" />
+                   <img src="{file.publicUrl}" alt="{file.alternative}" title="{file.title}" height="270c" width="255c" />  
                 </f:for>
             </f:if>
             <f:if condition="{content.headline}">

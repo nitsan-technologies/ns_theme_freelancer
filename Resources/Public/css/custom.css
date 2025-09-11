@@ -319,3 +319,10 @@ ul li,
 ol li {
   margin: 15px;
 }
+
+/* About Style */
+.about-section__left-content,
+.about-section__right-content {
+  display: flex;
+  justify-content: center;
+}
