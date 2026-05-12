@@ -14,7 +14,7 @@ $EM_CONF['ns_theme_freelancer'] = [
 		'depends' => [
 			'typo3' => '12.0.0-13.4.99',
 			'ns_basetheme' => '12.0.0-13.4.99',
-			'friendsoftypo3/content-blocks' : '^13.0'
+			'friendsoftypo3/content-blocks' : '^13.0',
 		],
 		'conflicts' => [
 		],
