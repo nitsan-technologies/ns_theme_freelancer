@@ -1,0 +1,2 @@
+# Site set constants (defaults also defined in settings.definitions.yaml)
+@import 'EXT:ns_theme_freelancer/Configuration/TypoScript/constants.typoscript'

@@ -1,0 +1,4 @@
+name: nitsan/ns_theme_freelancer
+label: Freelancer Theme Sets
+dependencies:
+  - nitsan-ns-basetheme/ns_basetheme

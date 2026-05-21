@@ -1,0 +1,20 @@
+categories:
+  NsThemeFreelancer:
+    label: 'Freelancer Theme'
+  NsThemeFreelancer.settings:
+    label: 'Website Settings'
+    parent: NsThemeFreelancer
+
+settings:
+  ns_theme_freelancer.website.settings.footerContentId:
+    label: 'Footer Content Id'
+    description: 'Page UID of the footer content container.'
+    category: NsThemeFreelancer.settings
+    type: int
+    default: 0
+
+  ns_theme_freelancer.website.settings.googleanalytics:
+    label: 'Google Analytics code'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: ''
