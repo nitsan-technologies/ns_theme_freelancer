@@ -1,0 +1,43 @@
+name: nitsan/ns-aboutus
+typeName: nitsan_nsaboutus
+group: nsfreelancer_blocks
+prefixFields: false
+prefixType: vendor
+fields:
+  -
+    identifier: title
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.title'
+    type: Text
+    required: true
+  -
+    identifier: lefttxt
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.lefttxt'
+    type: Textarea
+    rows: null
+    enableRichtext: false
+  -
+    identifier: righttxt
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.righttxt'
+    type: Textarea
+    rows: null
+    enableRichtext: false
+  -
+    identifier: btntxt
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btntxt'
+    type: Text
+  -
+    identifier: btnlink
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.btnlink'
+    type: Link
+  -
+    identifier: appearance_tab
+    type: Tab
+    label: Appearance
+  -
+    identifier: space_before_class
+    type: Text
+    useExistingField: true
+  -
+    identifier: space_after_class
+    type: Text
+    useExistingField: true

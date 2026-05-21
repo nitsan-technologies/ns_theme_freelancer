@@ -1,0 +1,25 @@
+<html data-namespace-typo3-fluid="true" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+    <header id="home" class="masthead bg-primary text-white text-center {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+        <div class="container d-flex align-items-center flex-column">
+            <f:if condition="{data.image}">
+                <f:for each="{data.image}" as="file">
+                  <img src="{file.publicUrl}" alt="{file.alternative}" title="{file.title}" height="270c" width="255c" />
+                </f:for> 
+            </f:if>
+            <f:if condition="{data.headline}">
+                <h1 class="masthead-heading text-uppercase mb-0">{data.headline}</h1>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </f:if>
+            <f:if condition="{data.text}">
+                <p class="masthead-subheading font-weight-light mb-0">{data.text}</p>
+            </f:if>
+        </div>
+    </header>
+</html>

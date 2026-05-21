@@ -1,0 +1,39 @@
+name: nitsan/ns-social
+typeName: nitsan_nssocial
+group: nsfreelancer_blocks
+prefixFields: false
+prefixType: vendor
+fields:
+  -
+    identifier: title
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.title'
+    type: Text
+    required: true
+  -
+    identifier: fblink
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.fblink'
+    type: Link
+  -
+    identifier: twlink
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.twlink'
+    type: Link
+  -
+    identifier: inlink
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.inlink'
+    type: Link
+  -
+    identifier: drilink
+    label: 'LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_flex.xlf:general.drilink'
+    type: Link
+  -
+    identifier: appearance_tab
+    type: Tab
+    label: Appearance
+  -
+    identifier: space_before_class
+    type: Text
+    useExistingField: true
+  -
+    identifier: space_after_class
+    type: Text
+    useExistingField: true
