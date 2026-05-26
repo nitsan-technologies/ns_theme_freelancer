@@ -67,8 +67,32 @@ page {
             pagets__content = TEXT
             pagets__content.value = {$ns_theme_freelancer.website.paths.templateRootPath}Content.html
         }
-        settings < plugin.ns_basetheme.settings
-        settings.childSettings < plugin.ns_theme_freelancer.settings
+        # Plain scalars only (do not copy plugin.* — TEXT cObjects become arrays in Fluid)
+        settings {
+            logo = {$ns_basetheme.website.settings.logo}
+            rootpage = {$ns_basetheme.website.settings.root}
+        }
+        settings.childSettings {
+            logo_text = {$ns_basetheme.website.settings.logo_text}
+            logo_width = {$ns_basetheme.website.settings.logo_width}
+            logo_height = {$ns_basetheme.website.settings.logo_height}
+            footerContentId = {$ns_theme_freelancer.website.settings.footerContentId}
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+            10.as = site
+
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                levels = 5
+                special = directory
+                special.value = {$ns_basetheme.website.settings.main_menu}
+                expandAll = 1
+                includeSpacer = 1
+                as = MainMenu
+            }
+        }
     }
 }
 

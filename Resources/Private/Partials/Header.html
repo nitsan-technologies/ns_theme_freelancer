@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
     <f:if condition="{settings.logo}">
-      <f:link.page pageUid="{settings.rootpage}" class="navbar-brand js-scroll-trigger">
+      <f:link.page pageUid="{settings.rootpage._typoScriptNodeValue}" class="navbar-brand js-scroll-trigger">
+        
         <f:if condition="{settings.childSettings.logo_width}">
           <f:then>
               <f:variable name="imgWidth" value="width={settings.childSettings.logo_width}" />
@@ -18,8 +19,10 @@
               <f:variable name="imgHeight" value="height=40px" />
           </f:else>
         </f:if>
-
-        <img src="{settings.logo}" alt="logo" {imgWidth} {imgHeight} />
+        <f:image src="{settings.logo._typoScriptNodeValue}" 
+        alt="logo" 
+        width="{imgWidth}" 
+        height="{imgHeight}" />
         <f:if condition="{settings.childSettings.logo_text}">{settings.childSettings.logo_text}</f:if>
       </f:link.page>
     </f:if>
@@ -33,7 +36,6 @@
     </div>
   </div>
 </nav>
-
 <f:section name="MainMenu">
   <f:if condition="{MainMenu}">
     <ul id="menu-main-menu" class="navbar-nav ml-auto">
