@@ -35,6 +35,7 @@ page {
         80 = EXT:ns_theme_freelancer/Resources/Public/css/freelancer.min.css
         90 = EXT:ns_theme_freelancer/Resources/Public/css/custom.css
         100 = EXT:ns_theme_freelancer/Resources/Public/vendor/fontawesome-free/css/all.min.css
+        110 = EXT:ns_basetheme/Resources/Public/css/ns_basetheme.css
     }
 
     // Initiate all the js-together
@@ -45,6 +46,7 @@ page {
         50 = EXT:ns_theme_freelancer/Resources/Public/js/jqBootstrapValidation.js
         60 = EXT:ns_theme_freelancer/Resources/Public/js/contact_me.js
         70 = EXT:ns_theme_freelancer/Resources/Public/js/freelancer.min.js
+        75 = EXT:ns_basetheme/Resources/Public/js/ns_basetheme.js
     }
     
     10 = FLUIDTEMPLATE
@@ -69,6 +71,18 @@ page {
         }
         settings < plugin.ns_basetheme.settings
         settings.childSettings < plugin.ns_theme_freelancer.settings
+
+        dataProcessing {
+            101 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            101 {
+                levels = 5
+                special = directory
+                special.value = {$ns_basetheme.website.settings.main_menu}
+                expandAll = 1
+                includeSpacer = 1
+                as = MainMenu
+            }
+        }
     }
 }
 
@@ -148,7 +162,8 @@ lib {
                     select {
                         pidInList.field = uid
                         orderBy = sorting
-                        where = colPos = 0
+                        # Main section content (colPos 0). colPos 1 is included for mis-placed elements.
+                        where = colPos IN (0,1)
                     }
                     stdWrap {
                         wrap = <div id="{field:subtitle}" class="section mcb-section">|</div>
@@ -162,6 +177,7 @@ lib {
 }    
 
 # <body> class based on backend_layout
+page.bodyTagCObject = COA
 page.bodyTagCObject {
     wrap = <body id="page-top" class="|">
 

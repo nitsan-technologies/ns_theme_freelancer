@@ -39,12 +39,20 @@
     <ul id="menu-main-menu" class="navbar-nav ml-auto">
       <f:for each="{MainMenu}" as="item">
         <li class="nav-item mx-0 mx-lg-1">
-          <a href="./#<f:format.case mode='lower'>{item.title}</f:format.case>" title="{item.title}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">
-              {item.title}
-          </a>
+          <f:if condition="{item.data.subtitle}">
+            <f:then>
+              <a href="./#{item.data.subtitle}" title="{item.title}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">
+                {item.title}
+              </a>
+            </f:then>
+            <f:else>
+              <a href="./#<f:format.case mode='lower'>{item.title}</f:format.case>" title="{item.title}" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">
+                {item.title}
+              </a>
+            </f:else>
+          </f:if>
         </li>
       </f:for>
     </ul>
   </f:if>
 </f:section>
-
