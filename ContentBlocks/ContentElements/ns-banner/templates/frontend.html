@@ -2,13 +2,13 @@
 
     <header id="home" class="masthead bg-primary text-white text-center {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
         <div class="container d-flex align-items-center flex-column">
-            <f:if condition="{image}">
-                <f:for each="{image}" as="file">
-                   <img src="{file.publicUrl}" alt="{file.alternative}" title="{file.title}" height="270c" width="255c" />  
-                </f:for>
+            <f:if condition="{data.image}">
+                <f:for each="{data.image}" as="file">
+                  <img src="{file.publicUrl}" alt="{file.alternative}" title="{file.title}" height="270c" width="255c" />
+                </f:for> 
             </f:if>
-            <f:if condition="{content.headline}">
-                <h1 class="masthead-heading text-uppercase mb-0">{content.headline}</h1>
+            <f:if condition="{data.headline}">
+                <h1 class="masthead-heading text-uppercase mb-0">{data.headline}</h1>
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -17,10 +17,9 @@
                     <div class="divider-custom-line"></div>
                 </div>
             </f:if>
-            <f:if condition="{content.text}">
-                <p class="masthead-subheading font-weight-light mb-0">{content.text}</p>
+            <f:if condition="{data.text}">
+                <p class="masthead-subheading font-weight-light mb-0">{data.text}</p>
             </f:if>
         </div>
     </header>
-
 </html>

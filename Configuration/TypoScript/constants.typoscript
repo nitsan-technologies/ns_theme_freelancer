@@ -1,4 +1,13 @@
 # Let's define some constants for global configuration
+ns_basetheme {
+	website {
+		settings {
+			#cat = ns_basetheme/120/02; type=boolean; label=Back To Top
+			back_to_top = 1
+		}
+	}
+}
+
 ns_theme_freelancer {	
 	website {
 		settings {

@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+  <div class="ns-backend-preview">
+    <h2><b><f:translate key="LLL:EXT:ns_theme_freelancer/Resources/Private/Language/locallang_db.xlf:wizard.ns_portfolio" /></b></h2>
+    <div class="row">
+      <f:for each="{data.portfolio}" as="file">
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto">
+            <f:if condition="{file.image}">
+              <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}" /></f:variable>
+              <img src="{imageUrl}" class="img-fluid" alt="portfolio-img" />
+            </f:if>
+          </div>
+        </div>
+      </f:for>
+    </div>
+  </div>
+
+</html>
