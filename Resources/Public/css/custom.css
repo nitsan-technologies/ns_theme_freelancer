@@ -326,3 +326,8 @@ ol li {
   display: flex;
   justify-content: center;
 }
+
+/* Portfolio modal: space between image and description text */
+.portfolio-modal .modal-body img.img-fluid {
+  margin-bottom: 3rem;
+}

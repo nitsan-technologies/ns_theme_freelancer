@@ -16,9 +16,9 @@ page {
     // Setup favion
     shortcutIcon = {$ns_basetheme.website.settings.favicon}
 
-    // Set viewport
     meta {
-        viewport = width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no
+        keywords.field = keywords
+        viewport = width=device-width, initial-scale=1
     }
 
     headerData {
