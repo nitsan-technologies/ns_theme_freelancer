@@ -67,18 +67,6 @@ page {
             pagets__content = TEXT
             pagets__content.value = {$ns_theme_freelancer.website.paths.templateRootPath}Content.html
         }
-        # Plain scalars only (do not copy plugin.* — TEXT cObjects become arrays in Fluid)
-        settings {
-            logo = {$ns_basetheme.website.settings.logo}
-            rootpage = {$ns_basetheme.website.settings.root}
-        }
-        settings.childSettings {
-            logo_text = {$ns_basetheme.website.settings.logo_text}
-            logo_width = {$ns_basetheme.website.settings.logo_width}
-            logo_height = {$ns_basetheme.website.settings.logo_height}
-            footerContentId = {$ns_theme_freelancer.website.settings.footerContentId}
-        }
-
         dataProcessing {
             10 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
             10.as = site
@@ -87,13 +75,46 @@ page {
             20 {
                 levels = 5
                 special = directory
-                special.value = {$ns_basetheme.website.settings.main_menu}
+                special.value.data = sitesettings:ns_basetheme.website.settings.main_menu
                 expandAll = 1
                 includeSpacer = 1
                 as = MainMenu
             }
         }
     }
+}
+
+# Live site settings (resolved at render time from Sites > Setup)
+lib.siteSettings {
+    logo = TEXT
+    logo.data = sitesettings:ns_basetheme.website.settings.logo
+
+    logoWidth = TEXT
+    logoWidth {
+        data = sitesettings:ns_basetheme.website.settings.logo_width
+        replacement.10 {
+            search = px
+            replace =
+        }
+    }
+
+    logoHeight = TEXT
+    logoHeight {
+        data = sitesettings:ns_basetheme.website.settings.logo_height
+        replacement.10 {
+            search = px
+            replace =
+        }
+    }
+
+    logoText = TEXT
+    logoText.data = sitesettings:ns_basetheme.website.settings.logo_text
+
+    root = TEXT
+    root.data = sitesettings:ns_basetheme.website.settings.root
+
+    footerContentId = TEXT
+    footerContentId.data = sitesettings:ns_theme_freelancer.website.settings.footerContentId
 }
 
 # Get default content
@@ -148,7 +169,7 @@ lib {
 
         2 = TEXT
         2 {
-            value = {$ns_basetheme.website.settings.copyright}
+            data = sitesettings:ns_basetheme.website.settings.copyright
             wrap = |
         }    
     }
@@ -184,6 +205,18 @@ lib {
         }   
     }
 }    
+
+##########################
+### Render Back To Top ###
+##########################
+
+page.footerData {
+    9901 = TEXT
+    9901 {
+        value = <!-- Render from EXT:ns_basetheme --><a href="#" id="ns_basetheme_back_to_top" title="Back to top">&uarr;</a>
+        if.isTrue.data = sitesettings:ns_basetheme.website.settings.back_to_top
+    }
+}
 
 # <body> class based on backend_layout
 page.bodyTagCObject {

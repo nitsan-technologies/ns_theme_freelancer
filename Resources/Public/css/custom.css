@@ -18,6 +18,10 @@ body{
   margin-top: 40px;
 }
 
+.portfolio-modal .portfolio-modal-image {
+  margin-bottom: 3rem;
+}
+
 @media screen and (max-width: 767px){
 	.confirm-msg h1{
 		font-size:30px;

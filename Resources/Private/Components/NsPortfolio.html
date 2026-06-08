@@ -55,8 +55,10 @@
                       </div>
                     </f:if>  
                     <f:if condition="{file.image}">
-                      <f:image src="{file.image}" class="img-fluid rounded mb-5" alt="portfolio-img" width="750"
-                        height="542" />
+                      <div class="portfolio-modal-image">
+                        <f:image src="{file.image}" class="img-fluid rounded" alt="portfolio-img" width="750"
+                          height="542" />
+                      </div>
                     </f:if>
 
                     <f:if condition="{file.description}">

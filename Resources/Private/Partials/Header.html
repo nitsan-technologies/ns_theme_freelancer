@@ -1,29 +1,35 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
   <div class="container">
-    <f:if condition="{settings.logo}">
-      <f:link.page pageUid="{settings.rootpage}" class="navbar-brand js-scroll-trigger">
-        
-        <f:if condition="{settings.childSettings.logo_width}">
+    <f:variable name="logo" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.logo')}" />
+    <f:if condition="{logo}">
+      <f:variable name="rootpage" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.root')}" />
+      <f:variable name="imgWidth" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.logoWidth')}" />
+      <f:variable name="imgHeight" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.logoHeight')}" />
+      <f:variable name="logoText" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.logoText')}" />
+      <f:link.page pageUid="{rootpage}" class="navbar-brand js-scroll-trigger">
+        <f:if condition="{imgWidth} && {imgHeight}">
           <f:then>
-              <f:variable name="imgWidth" value="{settings.childSettings.logo_width}" />
+            <f:image src="{logo}" alt="{f:if(condition: logoText, then: logoText, else: 'logo')}" width="{imgWidth}" height="{imgHeight}" />
           </f:then>
           <f:else>
-              <f:variable name="imgWidth" value="242px" />
+            <f:if condition="{imgWidth}">
+              <f:then>
+                <f:image src="{logo}" alt="{f:if(condition: logoText, then: logoText, else: 'logo')}" width="{imgWidth}" />
+              </f:then>
+              <f:else>
+                <f:if condition="{imgHeight}">
+                  <f:then>
+                    <f:image src="{logo}" alt="{f:if(condition: logoText, then: logoText, else: 'logo')}" height="{imgHeight}" />
+                  </f:then>
+                  <f:else>
+                    <f:image src="{logo}" alt="{f:if(condition: logoText, then: logoText, else: 'logo')}" />
+                  </f:else>
+                </f:if>
+              </f:else>
+            </f:if>
           </f:else>
         </f:if>
-        <f:if condition="{settings.childSettings.logo_height}">
-          <f:then>
-              <f:variable name="imgHeight" value="{settings.childSettings.logo_height}" />
-          </f:then>
-          <f:else>
-              <f:variable name="imgHeight" value="40px" />
-          </f:else>
-        </f:if>
-        <f:image src="{settings.logo}" 
-        alt="logo" 
-        width="{imgWidth}" 
-        height="{imgHeight}" />
-        <f:if condition="{settings.childSettings.logo_text}">{settings.childSettings.logo_text}</f:if>
+        <f:if condition="{logoText}">{logoText}</f:if>
       </f:link.page>
     </f:if>
     
@@ -49,4 +55,3 @@
     </ul>
   </f:if>
 </f:section>
-

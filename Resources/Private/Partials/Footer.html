@@ -1,15 +1,16 @@
 <footer class="footer text-center">
   <div class="container">
     <div class="row">
-      <f:if condition="{settings.childSettings.footerContentId}">
+      <f:variable name="footerContentId" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.footerContentId')}" />
+      <f:if condition="{footerContentId}">
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: settings.childSettings.footerContentId}" />
+          <f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: footerContentId}" />
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">  
-          <f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: settings.childSettings.footerContentId}" />
+          <f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: footerContentId}" />
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: settings.childSettings.footerContentId}" />
+          <f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: footerContentId}" />
         </div>
       </f:if>  
    </div>

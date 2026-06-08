@@ -4,14 +4,12 @@ ns_basetheme {
 		settings {
 			logo = fileadmin/ns_theme_freelancer/logo.png
 			favicon = fileadmin/ns_theme_freelancer/favicon.ico
-			logo_width = 242px
-			logo_height = 40px
-			logo_text =
 			main_menu = 10
 			footer_menu = 7
 			root = 1
 			compress_cssjs = 1
 			no_cache = 1
+			back_to_top = 1
 			copyright = T3Planet | <a href="https://www.nitsan.in"> NITSAN Technologies Pvt Ltd </a>
 		}
 	}
