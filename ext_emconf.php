@@ -9,12 +9,12 @@ $EM_CONF['ns_theme_freelancer'] = [
 	'author_email' => 'info@t3planet.de',
 	'author_company' => 'T3Planet',
 	'state' => 'stable',
-	'version' => '13.1.0',
+	'version' => '14.0.0',
 	'constraints' => [
 		'depends' => [
-			'typo3' => '12.0.0-13.4.99',
-			'ns_basetheme' => '12.0.0-13.4.99',
-			'content_blocks' => '0.1.0-1.5.3',
+			'typo3' => '14.0.0-14.9.99',
+			'ns_basetheme' => '14.0.0-14.9.99',
+      
 		],
 		'conflicts' => [
 		],

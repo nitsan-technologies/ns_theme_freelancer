@@ -1,4 +1,6 @@
 base: /
+dependencies:
+  - nitsan/ns_theme_freelancer
 disableStaticFileCache: false
 errorHandling:
   -

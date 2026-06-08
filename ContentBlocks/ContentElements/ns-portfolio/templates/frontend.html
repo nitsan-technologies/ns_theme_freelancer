@@ -55,10 +55,12 @@
                         <div class="divider-custom-line"></div>
                       </div>
                     </f:if>  
-                     <f:if condition="{file.image}">
-                      <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}"/></f:variable>
-                      <img src="{imageUrl}" class="img-fluid rounded mb-5" alt="portfolio-img" />
-                     </f:if>
+                    <f:if condition="{file.image}">
+                      <div class="portfolio-modal-image">
+                        <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}"/></f:variable>
+                        <img src="{imageUrl}" class="img-fluid rounded" alt="portfolio-img" />
+                      </div>
+                    </f:if>
 
                     <f:if condition="{file.description}">
                       <p class="mb-5">{file.description}</p>
