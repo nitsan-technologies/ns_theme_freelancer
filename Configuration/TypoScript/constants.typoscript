@@ -1,12 +1,30 @@
 # Let's define some constants for global configuration
+ns_basetheme {
+	website {
+		settings {
+			logo = fileadmin/ns_theme_freelancer/logo.png
+			favicon = fileadmin/ns_theme_freelancer/favicon.ico
+			logo_width = 242px
+			logo_height = 40px
+			logo_text =
+			main_menu = 10
+			footer_menu = 7
+			root = 1
+			compress_cssjs = 1
+			no_cache = 1
+			copyright = T3Planet | <a href="https://www.nitsan.in"> NITSAN Technologies Pvt Ltd </a>
+		}
+	}
+}
+
 ns_theme_freelancer {	
 	website {
 		settings {
 			#cat = ns_basetheme/110/04; type=int; label=Footer Content Id: Setup footer content-id of your footer Content
-			footerContentId = 
+			footerContentId = 9
 			
 			#cat = ns_theme_freelancer/website/settings/01; type=string; label=Google analytics code
-			googleanalytics = 
+			googleanalytics = 123456789
 		}
 		paths {
 			#cat = ns_theme_freelancer/website/settings/01; type=string; label=Template Path
