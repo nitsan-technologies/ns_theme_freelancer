@@ -75,7 +75,11 @@ page {
             20 {
                 levels = 5
                 special = directory
-                special.value.data = sitesettings:ns_basetheme.website.settings.main_menu
+                special.value {
+                    data = sitesettings:ns_basetheme.website.settings.main_menu
+                    override = {$ns_basetheme.website.settings.main_menu}
+                    override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.main_menu
+                }
                 expandAll = 1
                 includeSpacer = 1
                 as = MainMenu
@@ -84,14 +88,20 @@ page {
     }
 }
 
-# Live site settings (resolved at render time from Sites > Setup)
+# Live site settings with extension constant fallbacks (works with any site identifier)
 lib.siteSettings {
     logo = TEXT
-    logo.data = sitesettings:ns_basetheme.website.settings.logo
+    logo {
+        data = sitesettings:ns_basetheme.website.settings.logo
+        override = {$ns_basetheme.website.settings.logo}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.logo
+    }
 
     logoWidth = TEXT
     logoWidth {
         data = sitesettings:ns_basetheme.website.settings.logo_width
+        override = {$ns_basetheme.website.settings.logo_width}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.logo_width
         replacement.10 {
             search = px
             replace =
@@ -101,6 +111,8 @@ lib.siteSettings {
     logoHeight = TEXT
     logoHeight {
         data = sitesettings:ns_basetheme.website.settings.logo_height
+        override = {$ns_basetheme.website.settings.logo_height}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.logo_height
         replacement.10 {
             search = px
             replace =
@@ -108,13 +120,39 @@ lib.siteSettings {
     }
 
     logoText = TEXT
-    logoText.data = sitesettings:ns_basetheme.website.settings.logo_text
+    logoText {
+        data = sitesettings:ns_basetheme.website.settings.logo_text
+        override = {$ns_basetheme.website.settings.logo_text}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.logo_text
+    }
 
     root = TEXT
-    root.data = sitesettings:ns_basetheme.website.settings.root
+    root {
+        data = sitesettings:ns_basetheme.website.settings.root
+        override = {$ns_basetheme.website.settings.root}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.root
+    }
 
-    footerContentId = TEXT
-    footerContentId.data = sitesettings:ns_theme_freelancer.website.settings.footerContentId
+    mainMenu = TEXT
+    mainMenu {
+        data = sitesettings:ns_basetheme.website.settings.main_menu
+        override = {$ns_basetheme.website.settings.main_menu}
+        override.if.isFalse.data = sitesettings:ns_basetheme.website.settings.main_menu
+    }
+
+    footerContentId = CASE
+    footerContentId {
+        key.data = sitesettings:ns_theme_freelancer.website.settings.footerContentId
+
+        0 = TEXT
+        0.value = {$ns_theme_freelancer.website.settings.footerContentId}
+
+        default = TEXT
+        default {
+            data = sitesettings:ns_theme_freelancer.website.settings.footerContentId
+            ifEmpty = {$ns_theme_freelancer.website.settings.footerContentId}
+        }
+    }
 }
 
 # Get default content
@@ -169,7 +207,9 @@ lib {
 
         2 = TEXT
         2 {
-            data = sitesettings:ns_basetheme.website.settings.copyright
+            data = sitesettings:copyright
+            override = {$ns_basetheme.website.settings.copyright}
+            override.if.isFalse.data = sitesettings:copyright
             wrap = |
         }    
     }
@@ -180,7 +220,8 @@ lib {
         10 {
             table = pages
             select {
-                pidInList = {$ns_basetheme.website.settings.main_menu}
+                pidInList.cObject = TEXT
+                pidInList.cObject < lib.siteSettings.mainMenu
                 orderBy = sorting
                 where = title != ''
 
@@ -214,7 +255,14 @@ page.footerData {
     9901 = TEXT
     9901 {
         value = <!-- Render from EXT:ns_basetheme --><a href="#" id="ns_basetheme_back_to_top" title="Back to top">&uarr;</a>
-        if.isTrue.data = sitesettings:ns_basetheme.website.settings.back_to_top
+        if {
+            value = 1
+            equals.data = sitesettings:ns_basetheme.website.settings.back_to_top
+        }
+        if.if.isFalse {
+            value = {$ns_basetheme.website.settings.back_to_top}
+            equals = 1
+        }
     }
 }
 

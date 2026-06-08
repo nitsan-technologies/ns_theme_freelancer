@@ -6,12 +6,67 @@ categories:
     parent: NsThemeFreelancer
 
 settings:
+  # Freelancer demo defaults (apply to any site identifier via site set)
+  copyright:
+    label: 'Copyright Text'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: 'T3Planet | <a href="https://www.nitsan.in"> NITSAN Technologies Pvt Ltd </a>'
+
+  ns_basetheme.website.settings.logo:
+    label: 'Logo'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: 'fileadmin/ns_theme_freelancer/logo.png'
+
+  ns_basetheme.website.settings.logo_width:
+    label: 'Logo Image Width'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: '242px'
+
+  ns_basetheme.website.settings.logo_height:
+    label: 'Logo Image Height'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: '50px'
+
+  ns_basetheme.website.settings.favicon:
+    label: 'Favicon'
+    category: NsThemeFreelancer.settings
+    type: string
+    default: 'fileadmin/ns_theme_freelancer/favicon.ico'
+
+  ns_basetheme.website.settings.main_menu:
+    label: 'Main Menu Id'
+    category: NsThemeFreelancer.settings
+    type: int
+    default: 10
+
+  ns_basetheme.website.settings.footer_menu:
+    label: 'Footer Menu Id'
+    category: NsThemeFreelancer.settings
+    type: int
+    default: 7
+
+  ns_basetheme.website.settings.root:
+    label: 'Root Page Id'
+    category: NsThemeFreelancer.settings
+    type: int
+    default: 1
+
+  ns_basetheme.website.settings.back_to_top:
+    label: 'Back To Top'
+    category: NsThemeFreelancer.settings
+    type: bool
+    default: true
+
   ns_theme_freelancer.website.settings.footerContentId:
     label: 'Footer Content Id'
     description: 'Page UID of the footer content container.'
     category: NsThemeFreelancer.settings
     type: int
-    default: 0
+    default: 9
 
   ns_theme_freelancer.website.settings.googleanalytics:
     label: 'Google Analytics code'
