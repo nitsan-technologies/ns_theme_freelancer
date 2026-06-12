@@ -3,8 +3,9 @@
   <div id="about" class="section mcb-section {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
     <section class="page-section bg-primary text-white mb-0" id="about">
       <div class="container">
-        <f:if condition="{data.title}">
-          <h2 class="page-section-heading text-center text-uppercase text-white">{data.title}</h2>
+        <f:variable name="title" value="{data -> f:render.text(field: 'title')}" />
+        <f:if condition="{title}">
+          <h2 class="page-section-heading text-center text-uppercase text-white">{title}</h2>
         </f:if>
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
@@ -15,29 +16,32 @@
         </div>
         <div class="row">
           <div class="col-lg-4 ml-auto">
-            <f:if condition="{data.lefttxt}">
+            <f:variable name="lefttxt" value="{data -> f:render.text(field: 'lefttxt')}" />
+            <f:if condition="{lefttxt}">
               <div class="about-section__left-content">
-                <p class="lead">{data.lefttxt}</p>
+                <p class="lead">{lefttxt}</p>
               </div>
             </f:if>
           </div>
           <div class="col-lg-4 mr-auto">
-            <f:if condition="{data.righttxt}">
+            <f:variable name="righttxt" value="{data -> f:render.text(field: 'righttxt')}" />
+            <f:if condition="{righttxt}">
               <div class="about-section__right-content">
-                <p class="lead">{data.righttxt}</p>
+                <p class="lead">{righttxt}</p>
               </div>
             </f:if>
           </div>
         </div>
         <div class="text-center mt-4">
-          <f:if condition="{data.btntxt} && {data.btnlink.url} != ''">
+          <f:variable name="btntxt" value="{data -> f:render.text(field: 'btntxt')}" />
+          <f:if condition="{btntxt} && {data.btnlink.url} != ''">
             <f:link.typolink class="btn btn-xl btn-outline-light" parameter="{data.btnlink}">
               <i class="fas fa-download mr-2"></i>
-              {data.btntxt}
+              {btntxt}
             </f:link.typolink>
           </f:if>
         </div>
       </div>
     </section>
   </div>
-</html> 
+</html>

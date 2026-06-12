@@ -8,4 +8,40 @@ lib.contentElement {
 	layoutRootPaths {
 		10 = EXT:ns_theme_freelancer/Resources/Private/Extensions/Fluid/Layouts/
 	}
+	dataProcessing.1768551979 = record-transformation
+}
+
+tt_content.form_formframework =< lib.contentElement
+tt_content.form_formframework {
+	templateName >
+	template = TEXT
+	template.value (
+		<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+		<f:layout name="Default" />
+		<f:section name="Header"></f:section>
+		<f:section name="Main">
+			<section class="page-section" id="contact">
+				<div class="container">
+					<f:variable name="header" value="{record -> f:render.text(field: 'header')}" />
+					<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{header}</h2>
+					<div class="divider-custom">
+						<div class="divider-custom-line"></div>
+						<div class="divider-custom-icon">
+							<i class="fas fa-star"></i>
+						</div>
+						<div class="divider-custom-line"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8 mx-auto">
+							<f:if condition="{content}">
+								<f:then>{content -> f:format.raw()}</f:then>
+								<f:else><f:cObject typoscriptObjectPath="tt_content.{data.CType}.20" data="{data}" table="tt_content" /></f:else>
+							</f:if>
+						</div>
+					</div>
+				</div>
+			</section>
+		</f:section>
+		</html>
+	)
 }

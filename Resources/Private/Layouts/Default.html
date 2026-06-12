@@ -5,15 +5,21 @@
 <f:switch expression="{data.layout}">
 	<f:case value="1">
 		<div class="container">
-			<f:cObject typoscriptObjectPath="lib.content" />
+			<f:mark.contentArea colPos="0">
+				<f:cObject typoscriptObjectPath="lib.content" />
+			</f:mark.contentArea>
 		</div>
 	</f:case>
 	<f:case value="2">
-		<f:cObject typoscriptObjectPath="lib.content" />
+		<f:mark.contentArea colPos="0">
+			<f:cObject typoscriptObjectPath="lib.content" />
+		</f:mark.contentArea>
 	</f:case>
 	<f:defaultCase>
-		<f:cObject typoscriptObjectPath="lib.headerContent" />
-		<f:cObject typoscriptObjectPath="lib.PageContent" />
+		<f:mark.contentArea colPos="0">
+			<f:cObject typoscriptObjectPath="lib.headerContent" />
+			<f:cObject typoscriptObjectPath="lib.PageContent" />
+		</f:mark.contentArea>
 	</f:defaultCase>
 </f:switch>
 <!--TYPO3SEARCH_end-->
