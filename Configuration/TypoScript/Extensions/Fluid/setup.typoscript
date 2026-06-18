@@ -1,19 +1,21 @@
 lib.contentElement {
-	templateRootPaths {
-		10 = EXT:ns_theme_freelancer/Resources/Private/Extensions/Fluid/Templates/
-	}
-	partialRootPaths {
-		10 = EXT:ns_theme_freelancer/Resources/Private/Extensions/Fluid/Partials/
-	}
-	layoutRootPaths {
-		10 = EXT:ns_theme_freelancer/Resources/Private/Extensions/Fluid/Layouts/
-	}
 	dataProcessing.1768551979 = record-transformation
 }
 
-tt_content.form_formframework =< lib.contentElement
+# Replace inherited form CE config so inline Fluid template is used (no "Default" template lookup).
+tt_content.form_formframework >
+tt_content.form_formframework = FLUIDTEMPLATE
 tt_content.form_formframework {
-	templateName >
+	layoutRootPaths {
+		0 = EXT:fluid_styled_content/Resources/Private/Layouts/
+	}
+	partialRootPaths {
+		0 = EXT:fluid_styled_content/Resources/Private/Partials/
+	}
+	dataProcessing {
+		1770716912 = record-transformation
+		1768551979 = record-transformation
+	}
 	template = TEXT
 	template.value (
 		<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
@@ -44,4 +46,9 @@ tt_content.form_formframework {
 		</f:section>
 		</html>
 	)
+	20 = EXTBASEPLUGIN
+	20 {
+		extensionName = Form
+		pluginName = Formframework
+	}
 }
