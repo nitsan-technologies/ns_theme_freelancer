@@ -33,5 +33,8 @@
       "typo3/cms": {
           "extension-key": "ns_theme_freelancer"
       }
+  },
+  "suggest": {
+      "friendsoftypo3/visual-editor": "Enable WYSIWYG frontend editing for the T3 Freelancer theme"
   }
 }

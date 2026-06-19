@@ -1,5 +1,66 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-	
+	<f:variable name="footerContentId" value="{f:cObject(typoscriptObjectPath: 'lib.siteSettings.footerContentId')}" />
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<f:editMode>
+					<f:then>
+						<f:if condition="{data.doktype} == 1">
+							<f:then>
+								<f:mark.contentArea colPos="1">
+									<f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: footerContentId}" />
+								</f:mark.contentArea>
+							</f:then>
+							<f:else>
+								<f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: footerContentId}" />
+							</f:else>
+						</f:if>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="lib.footerContent" data="{footerContentId: footerContentId}" />
+					</f:else>
+				</f:editMode>
+			</div>
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<f:editMode>
+					<f:then>
+						<f:if condition="{data.doktype} == 1">
+							<f:then>
+								<f:mark.contentArea colPos="2">
+									<f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: footerContentId}" />
+								</f:mark.contentArea>
+							</f:then>
+							<f:else>
+								<f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: footerContentId}" />
+							</f:else>
+						</f:if>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="lib.footerContent1" data="{footerContentId: footerContentId}" />
+					</f:else>
+				</f:editMode>
+			</div>
+			<div class="col-lg-4 mb-5 mb-lg-0">
+				<f:editMode>
+					<f:then>
+						<f:if condition="{data.doktype} == 1">
+							<f:then>
+								<f:mark.contentArea colPos="3">
+									<f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: footerContentId}" />
+								</f:mark.contentArea>
+							</f:then>
+							<f:else>
+								<f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: footerContentId}" />
+							</f:else>
+						</f:if>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="lib.footerContent2" data="{footerContentId: footerContentId}" />
+					</f:else>
+				</f:editMode>
+			</div>
+		</div>
+	</div>
 </f:section>

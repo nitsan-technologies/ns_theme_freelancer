@@ -2,6 +2,22 @@
 
 <f:section name="main">	
 	<!-- Render main content colpost=0 -->
-	<f:cObject typoscriptObjectPath="lib.content" />
+	<f:editMode>
+		<f:then>
+			<f:if condition="{data.doktype} == 1">
+				<f:then>
+					<f:mark.contentArea colPos="0">
+						<f:cObject typoscriptObjectPath="lib.content" />
+					</f:mark.contentArea>
+				</f:then>
+				<f:else>
+					<f:cObject typoscriptObjectPath="lib.content" />
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:cObject typoscriptObjectPath="lib.content" />
+		</f:else>
+	</f:editMode>
 	<hr>
 </f:section>

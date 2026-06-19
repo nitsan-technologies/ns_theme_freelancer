@@ -5,15 +5,65 @@
 <f:switch expression="{data.layout}">
 	<f:case value="1">
 		<div class="container">
-			<f:cObject typoscriptObjectPath="lib.content" />
+			<f:editMode>
+				<f:then>
+					<f:if condition="{data.doktype} == 1">
+						<f:then>
+							<f:mark.contentArea colPos="0">
+								<f:cObject typoscriptObjectPath="lib.content" />
+							</f:mark.contentArea>
+						</f:then>
+						<f:else>
+							<f:cObject typoscriptObjectPath="lib.content" />
+						</f:else>
+					</f:if>
+				</f:then>
+				<f:else>
+					<f:cObject typoscriptObjectPath="lib.content" />
+				</f:else>
+			</f:editMode>
 		</div>
 	</f:case>
 	<f:case value="2">
-		<f:cObject typoscriptObjectPath="lib.content" />
+		<f:editMode>
+			<f:then>
+				<f:if condition="{data.doktype} == 1">
+					<f:then>
+						<f:mark.contentArea colPos="0">
+							<f:cObject typoscriptObjectPath="lib.content" />
+						</f:mark.contentArea>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="lib.content" />
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<f:cObject typoscriptObjectPath="lib.content" />
+			</f:else>
+		</f:editMode>
 	</f:case>
 	<f:defaultCase>
-		<f:cObject typoscriptObjectPath="lib.headerContent" />
-		<f:cObject typoscriptObjectPath="lib.PageContent" />
+		<f:editMode>
+			<f:then>
+				<f:if condition="{data.doktype} == 1">
+					<f:then>
+						<f:mark.contentArea colPos="0">
+							<f:cObject typoscriptObjectPath="lib.headerContent" />
+							<f:cObject typoscriptObjectPath="lib.PageContent" />
+						</f:mark.contentArea>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="lib.headerContent" />
+						<f:cObject typoscriptObjectPath="lib.PageContent" />
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<f:cObject typoscriptObjectPath="lib.headerContent" />
+				<f:cObject typoscriptObjectPath="lib.PageContent" />
+			</f:else>
+		</f:editMode>
 	</f:defaultCase>
 </f:switch>
 <!--TYPO3SEARCH_end-->

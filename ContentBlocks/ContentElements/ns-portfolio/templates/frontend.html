@@ -3,8 +3,9 @@
   <section class="page-section portfolio {f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"
     id="portfolio">
     <div class="container">
-      <f:if condition="{data.title}">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{data.title}</h2>
+      <f:variable name="title" value="{data -> f:render.text(field: 'title')}" />
+      <f:if condition="{title}">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{title}</h2>
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
@@ -13,8 +14,8 @@
           <div class="divider-custom-line"></div>
         </div>
       </f:if>
-      <div class="row">  
-        <f:for each="{data.portfolio}" as="file" iteration="iterator">
+      <div class="row">
+        <f:for each="{data.portfolio}" as="item" iteration="iterator">
           <div class="col-md-6 col-lg-4">
             <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal{iterator.index}">
               <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -22,16 +23,16 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <f:if condition="{file.image}">
-              <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}" /></f:variable>
-              <img src="{imageUrl}" class="img-fluid" alt="portfolio-img" />
-            </f:if>
+              <f:if condition="{item.image}">
+                <f:variable name="imageUrl"><f:uri.typolink parameter="{item.image}" /></f:variable>
+                <img src="{imageUrl}" class="img-fluid" alt="portfolio-img" />
+              </f:if>
             </div>
           </div>
         </f:for>
       </div>
     </div>
-    <f:for each="{data.portfolio}" as="file" iteration="iterator">
+    <f:for each="{data.portfolio}" as="item" iteration="iterator">
       <div class="portfolio-modal modal fade" id="portfolioModal{iterator.index}" tabindex="-1" role="dialog"
         aria-labelledby="portfolioModal2Label" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -45,8 +46,9 @@
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-lg-8">
-                    <f:if condition="{file.headline}">
-                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{file.headline}</h2>
+                    <f:variable name="headline" value="{item -> f:render.text(field: 'headline')}" />
+                    <f:if condition="{headline}">
+                      <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{headline}</h2>
                       <div class="divider-custom">
                         <div class="divider-custom-line"></div>
                         <div class="divider-custom-icon">
@@ -54,16 +56,17 @@
                         </div>
                         <div class="divider-custom-line"></div>
                       </div>
-                    </f:if>  
-                    <f:if condition="{file.image}">
+                    </f:if>
+                    <f:if condition="{item.image}">
                       <div class="portfolio-modal-image">
-                        <f:variable name="imageUrl"><f:uri.typolink parameter="{file.image}"/></f:variable>
+                        <f:variable name="imageUrl"><f:uri.typolink parameter="{item.image}"/></f:variable>
                         <img src="{imageUrl}" class="img-fluid rounded" alt="portfolio-img" />
                       </div>
                     </f:if>
 
-                    <f:if condition="{file.description}">
-                      <p class="mb-5">{file.description}</p>
+                    <f:variable name="description" value="{item -> f:render.text(field: 'description')}" />
+                    <f:if condition="{description}">
+                      <p class="mb-5">{description}</p>
                     </f:if>
                     <button class="btn btn-primary" href="#" data-dismiss="modal">
                       <i class="fas fa-times fa-fw"></i>
