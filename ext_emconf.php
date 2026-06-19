@@ -19,6 +19,7 @@ $EM_CONF['ns_theme_freelancer'] = [
 		'conflicts' => [
 		],
 		'suggests' => [
+			'visual_editor' => '1.0.0-1.99.99',
 		],
 	],
 ];
