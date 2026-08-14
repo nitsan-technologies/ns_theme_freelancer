@@ -4,6 +4,12 @@ services:
     autoconfigure: true
     public: false
 
+  NITSAN\NsThemeFreelancer\:
+    resource: '../Classes/*'
+
   NITSAN\NsThemeFreelancer\Updates\ContentBlockMigration:
     tags:
       - name: 'typo3.install.upgrade.wizard'
+
+  NITSAN\NsThemeFreelancer\Service\ContentBlockMigration:
+    public: true

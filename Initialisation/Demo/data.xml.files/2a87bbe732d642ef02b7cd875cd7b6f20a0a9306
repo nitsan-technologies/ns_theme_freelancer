@@ -1,0 +1,96 @@
+renderingOptions:
+  submitButtonLabel: Send
+type: Form
+identifier: contactForm
+label: 'Contact Form'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Theme-  Freelancer'
+      senderAddress: '{text-3}'
+      senderName: '{text-1}'
+      format: html
+      attachUploads: true
+      recipients:
+        '{text-3}': '{text-1}'
+      replyToRecipients:
+        '{text-3}': ''
+    identifier: EmailToSender
+  -
+    options:
+      pageUid: '5'
+      additionalParameters: ''
+    identifier: Redirect
+  -
+    options:
+      subject: '{textarea-1}'
+      recipients:
+        t3admn@gmail.com: 'Theme-  Freelancer'
+      senderAddress: '{text-3}'
+      senderName: '{text-1}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: Default
+      useFluidEmail: false
+      title: ''
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-3
+        label: E-Mial
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email Address'
+          elementDescription: ''
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: 'Phone Number'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Phone Number'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Message
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            placeholder: Message
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
