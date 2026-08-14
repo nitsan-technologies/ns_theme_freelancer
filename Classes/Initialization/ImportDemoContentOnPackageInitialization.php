@@ -17,6 +17,9 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Package\Event\PackageInitializationEvent;
 use TYPO3\CMS\Core\Package\Initialization\ImportExtensionDataOnPackageInitialization;
 use TYPO3\CMS\Core\Registry;
+use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
+use TYPO3\CMS\Core\Resource\File;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Impexp\Utility\ImportExportUtility;
@@ -42,6 +45,7 @@ final class ImportDemoContentOnPackageInitialization implements LoggerAwareInter
         private readonly ImportExportUtility $importExportUtility,
         private readonly SiteConfiguration $siteConfiguration,
         private readonly SiteWriter $siteWriter,
+        private readonly ResourceFactory $resourceFactory,
     ) {}
 
     #[AsEventListener(
@@ -86,6 +90,7 @@ final class ImportDemoContentOnPackageInitialization implements LoggerAwareInter
             $importResult = $this->importExportUtility->importT3DFile($importFile, 0);
             $this->registry->set(self::REGISTRY_NAMESPACE, $registryKey, 1);
             $this->importSiteConfiguration($event, $packagePath);
+            $this->remapImportedFormPersistenceIdentifiers();
             $event->addStorageEntry(__CLASS__, [
                 'importResult' => $importResult,
                 'importFile' => $importFile,
@@ -169,5 +174,86 @@ final class ImportDemoContentOnPackageInitialization implements LoggerAwareInter
                 );
             }
         }
+    }
+
+    /**
+     * TYPO3 impexp remaps form persistence identifiers to FAL "storage:uid"
+     * (e.g. "1:3"). EXT:form in v14 only loads YAML path identifiers
+     * (e.g. "1:/ns_theme_freelancer/Forms/contactForm.form.yaml").
+     */
+    private function remapImportedFormPersistenceIdentifiers(): void
+    {
+        $connection = $this->connectionPool->getConnectionForTable('tt_content');
+        $records = $connection->select(
+            ['uid', 'pi_flexform'],
+            'tt_content',
+            ['CType' => 'form_formframework', 'deleted' => 0]
+        )->fetchAllAssociative();
+
+        foreach ($records as $record) {
+            $flexform = (string)($record['pi_flexform'] ?? '');
+            if ($flexform === '') {
+                continue;
+            }
+
+            $updatedFlexform = $this->replaceLegacyFormPersistenceIdentifier($flexform);
+            if ($updatedFlexform === $flexform) {
+                continue;
+            }
+
+            $connection->update(
+                'tt_content',
+                ['pi_flexform' => $updatedFlexform],
+                ['uid' => (int)$record['uid']]
+            );
+        }
+    }
+
+    private function replaceLegacyFormPersistenceIdentifier(string $flexform): string
+    {
+        if (!preg_match(
+            '#(<field index="settings\.persistenceIdentifier">\s*<value index="vDEF">)([^<]+)(</value>)#s',
+            $flexform,
+            $matches
+        )) {
+            return $flexform;
+        }
+
+        $identifier = html_entity_decode(trim($matches[2]), ENT_XML1 | ENT_QUOTES, 'UTF-8');
+        $pathIdentifier = $this->resolveYamlFormPersistenceIdentifier($identifier);
+        if ($pathIdentifier === null || $pathIdentifier === $identifier) {
+            return $flexform;
+        }
+
+        return str_replace(
+            $matches[0],
+            $matches[1] . htmlspecialchars($pathIdentifier, ENT_XML1) . $matches[3],
+            $flexform
+        );
+    }
+
+    private function resolveYamlFormPersistenceIdentifier(string $identifier): ?string
+    {
+        if (!preg_match('/^(\d+):(\d+)$/', $identifier, $matches)) {
+            return null;
+        }
+
+        $storageUid = (int)$matches[1];
+        $fileUid = (int)$matches[2];
+
+        try {
+            $file = $this->resourceFactory->getFileObject($fileUid);
+        } catch (FileDoesNotExistException) {
+            return null;
+        }
+
+        if (!$file instanceof File
+            || $file->getStorage()->getUid() !== $storageUid
+            || $file->getExtension() !== 'yaml'
+        ) {
+            return null;
+        }
+
+        return $file->getCombinedIdentifier();
     }
 }
